@@ -7,8 +7,10 @@ import { ButtonComponent } from '@components/ui/button/button.component';
 import { CollectPointPageComponent } from '@pages/collect-point-page/collect-point-page.component';
 import { EcoMarketPageComponent } from '@pages/eco-market-page/eco-market-page.component';
 import { MainPageComponent } from '@pages/main-page/main-page.component';
-import { ProfilePageComponent } from './pages/profile-page/profile-page/profile-page.component';
+import { ProfilePageComponent } from '@pages/profile-page/profile-page.component';
 import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { InputComponent } from './components/ui/input/input.component';
 
 @NgModule({
 	declarations: [
@@ -18,7 +20,9 @@ import { HeaderComponent } from './components/header/header.component';
 		EcoMarketPageComponent,
 		MainPageComponent,
 		ProfilePageComponent,
-  HeaderComponent,
+  		HeaderComponent,
+  		FooterComponent,
+    InputComponent,
 	],
 	imports: [
 		BrowserModule,

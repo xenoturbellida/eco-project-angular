@@ -1,25 +1,31 @@
-<div class="header_wrapper">
-	<a routerLink="/" class="logo">
-		<img src="/assets/logo.svg" alt="">
-	</a>
-		<a routerLink="/" class="header_link">
-			Главная
+<div class="container">
+	<div class="header_wrapper">
+		<a routerLink="/" class="logo">
+			<img src="/assets/logo.svg" alt="">
 		</a>
-		<a routerLink="/" class="header_link">
-			Пункты сбора
-		</a>
-		<a routerLink="/" class="header_link">
-			Экомаркет
-		</a>
-		<a routerLink="/" class="header_link">
-			О сервисе
-		</a>
-	<div class="header_right">
-		<img src="/assets/place.svg" alt="" class='header_icon'>
-		Город
-		<app-button>
-			<img src="/assets/enter.svg" alt="" class='header_icon'>
-			Войти
-		</app-button>
+			<a routerLink="/" class="header_link">
+				Главная
+			</a>
+			<a routerLink="/collect_point" class="header_link">
+				Пункты сбора
+			</a>
+			<a routerLink="/eco_market" class="header_link">
+				Экомаркет
+			</a>
+			<a routerLink="/" class="header_link">
+				О сервисе
+			</a>
+		<div class="header_wrapper">
+			<div class="header_right">
+				<img src="/assets/place.svg" alt="" class='header_icon'>
+				Город
+			</div>
+			<div class="header_right">
+				<app-button>
+					<img src="/assets/enter.svg" alt="" class='header_icon'>
+					Войти
+				</app-button>
+			</div>
+		</div>
 	</div>
 </div>
