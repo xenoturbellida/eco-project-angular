@@ -15,6 +15,7 @@ import { MainPageCardComponent } from '@components/cards/main-page-card/main-pag
 import { SwiperComponent } from './components/swiper/swiper.component';
 import { SwiperCardComponent } from './components/cards/swiper-card/swiper-card.component';
 import { SwiperModule } from 'swiper/angular';
+import { MapComponent } from './components/map/map.component';
 
 @NgModule({
 	declarations: [
@@ -30,6 +31,7 @@ import { SwiperModule } from 'swiper/angular';
     	MainPageCardComponent,
     	SwiperComponent,
      	SwiperCardComponent,
+      	MapComponent,
 	],
 	imports: [
 		BrowserModule,
