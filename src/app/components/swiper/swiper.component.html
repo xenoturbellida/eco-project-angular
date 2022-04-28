@@ -1,0 +1,31 @@
+<div class='swiper_wrapper'>
+<swiper [config]='config' class="customSwiper">
+	<ng-template swiperSlide>
+		<app-swiper-card
+			title='Сделаем мир чище'
+			text='Сдай макулатуру или старую одежду и получи скидку на покупку товаров из переработанных материалов'
+			btnText='Условия сервиса'
+			background='#B3EDC8'
+			img='../../assets/galleryPhoto1.svg'>
+		</app-swiper-card>
+	</ng-template>
+	<ng-template swiperSlide>
+		<app-swiper-card
+			title='А вы знали...'
+			text='что среднее время разложения пластмассовых изделий колеблется от 400 до 700 лет,  а полиэтиленовых пакетов — от 100 до 200 лет? '
+			btnText='Узнать больше'
+			background='#FFE48F'
+			img='../../assets/galleryPhoto2.svg'>
+		</app-swiper-card>
+	</ng-template>
+	<ng-template swiperSlide>
+		<app-swiper-card
+			title='Что с масками?'
+			text='Сдай макулатуру или старую одежду и получи скидку на покупку товаров из переработанных материалов'
+			btnText='Пункты сбора масок'
+			background='#BFF0DE'
+			img='../../assets/galleryPhoto2.svg'>
+		</app-swiper-card>
+	</ng-template>
+</swiper>
+</div>

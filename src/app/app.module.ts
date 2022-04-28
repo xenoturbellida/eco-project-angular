@@ -11,7 +11,10 @@ import { ProfilePageComponent } from '@pages/profile-page/profile-page.component
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { InputComponent } from './components/ui/input/input.component';
-import { MainPageCardComponent } from './components/cards/main-page-card/main-page-card/main-page-card.component';
+import { MainPageCardComponent } from '@components/cards/main-page-card/main-page-card.component';
+import { SwiperComponent } from './components/swiper/swiper.component';
+import { SwiperCardComponent } from './components/cards/swiper-card/swiper-card.component';
+import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
 	declarations: [
@@ -23,12 +26,15 @@ import { MainPageCardComponent } from './components/cards/main-page-card/main-pa
 		ProfilePageComponent,
   		HeaderComponent,
   		FooterComponent,
-    InputComponent,
-    MainPageCardComponent,
+    	InputComponent,
+    	MainPageCardComponent,
+    	SwiperComponent,
+     	SwiperCardComponent,
 	],
 	imports: [
 		BrowserModule,
-		AppRoutingModule
+		AppRoutingModule,
+		SwiperModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

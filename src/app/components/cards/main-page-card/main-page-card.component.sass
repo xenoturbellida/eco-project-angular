@@ -1,4 +1,9 @@
+h5
+	font-weight: 400
+	color: rgba(0, 11, 38, 0.56)
+
 .container
+	--index: calc(1vw + 1vh)
 	width: 70vh
 	height: 35vh
 	margin: 8px
@@ -11,3 +16,11 @@
 		flex-direction: row
 		.main_card
 			margin-left: 20px
+	.image
+		box-sizing: border-box
+		display: block
+		width: calc(var(--index)*10)
+		height: auto
+		justify-content: center
+		align-items: center
+		margin-top: 30px
