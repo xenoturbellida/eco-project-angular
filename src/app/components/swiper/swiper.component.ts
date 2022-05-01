@@ -12,11 +12,15 @@ SwiperCore.use([Navigation, Autoplay]);
 })
 
 export class SwiperComponent {
+
 	config: SwiperOptions = {
 		slidesPerView: 1,
 		spaceBetween: 50,
-		navigation: true,
+		navigation: {
+			nextEl: '.swiper-button-next-custom',
+			prevEl: '.swiper-button-prev-custom',
+		},
 		loop: true,
-		autoplay: true,
+		// autoplay: true,
 	}
 }

@@ -1,4 +1,32 @@
+@import '~swiper/swiper.min.css'
+@import '~swiper/modules/navigation/navigation.min.css'
 .swiper_wrapper
-	position: relative
+	margin: 0 auto
 	width: 100%
+	.navigation
+		display: flex
+		justify-content: space-between
+		align-items: center
+		z-index: 5
+		cursor: pointer
+		position: relative
+		top: 185px
+	.swiper-button-prev-custom,
+	.swiper-button-next-custom
+		width: 44px
+		height: 44px
+		background: white no-repeat center
+		border: none
+		border-radius: 50px
+		box-shadow: 0 4px 24px rgba(0, 11, 38, 0.12)
+	.swiper-button-prev-custom
+		display: flex
+		justify-content: center
+		align-items: center
+		margin-left: -20px
+	.swiper-button-next-custom
+		display: flex
+		align-items: center
+		justify-content: center
+		margin-right: -20px
 

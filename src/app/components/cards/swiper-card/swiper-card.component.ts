@@ -15,11 +15,11 @@ export class SwiperCardComponent implements OnInit {
 	@Input() img: string;
 
 	constructor() {
-		this.title = "";
-		this.text = "";
-		this.btnText = "";
-		this.img = "";
-		this.background ="";
+		this.title = '';
+		this.text = '';
+		this.btnText = '';
+		this.img = '';
+		this.background ='';
 	}
 
 	ngOnInit(): void {
