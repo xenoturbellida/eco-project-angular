@@ -8,9 +8,12 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class EcoMarketPageComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit(): void {
+
   }
 
 }
