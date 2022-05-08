@@ -16,6 +16,7 @@ import { SwiperComponent } from './components/swiper/swiper.component';
 import { SwiperCardComponent } from './components/cards/swiper-card/swiper-card.component';
 import { SwiperModule } from 'swiper/angular';
 import { MapComponent } from './components/map/map.component';
+import { SortComponent } from '@components/market/sort/sort.component';
 
 @NgModule({
 	declarations: [
@@ -32,6 +33,7 @@ import { MapComponent } from './components/map/map.component';
     	SwiperComponent,
      	SwiperCardComponent,
       	MapComponent,
+       	SortComponent,
 	],
 	imports: [
 		BrowserModule,
