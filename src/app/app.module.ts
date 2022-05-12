@@ -8,14 +8,18 @@ import { CollectPointPageComponent } from '@pages/collect-point-page/collect-poi
 import { EcoMarketPageComponent } from '@pages/eco-market-page/eco-market-page.component';
 import { MainPageComponent } from '@pages/main-page/main-page.component';
 import { ProfilePageComponent } from '@pages/profile-page/profile-page.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { InputComponent } from './components/ui/input/input.component';
+import { HeaderComponent } from '@components/header/header.component';
+import { FooterComponent } from '@components/footer/footer.component';
+import { InputComponent } from '@components/ui/input/input.component';
 import { MainPageCardComponent } from '@components/cards/main-page-card/main-page-card.component';
-import { SwiperComponent } from './components/swiper/swiper.component';
-import { SwiperCardComponent } from './components/cards/swiper-card/swiper-card.component';
+import { SwiperComponent } from '@components/swiper/swiper.component';
+import { SwiperCardComponent } from '@components/cards/swiper-card/swiper-card.component';
 import { SwiperModule } from 'swiper/angular';
-import { MapComponent } from './components/map/map.component';
+import { MapComponent } from '@components/map/map.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalContainerComponent } from '@components/modals/modal-container/modal-container.component';
+import { ModalAuthComponent } from '@components/modals/modal-auth/modal-auth.component';
+import { DialogModule } from '@angular/cdk-experimental/dialog';
 
 @NgModule({
 	declarations: [
@@ -32,11 +36,15 @@ import { MapComponent } from './components/map/map.component';
     	SwiperComponent,
      	SwiperCardComponent,
       	MapComponent,
+       	ModalContainerComponent,
+       	ModalAuthComponent,
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
-		SwiperModule
+		SwiperModule,
+		BrowserAnimationsModule,
+		DialogModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent]
