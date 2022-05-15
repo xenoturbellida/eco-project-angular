@@ -1,0 +1,19 @@
+<form
+	[formGroup]='form'
+	(ngSubmit)='onSubmit()'
+>
+	<input
+		type='tel'
+		formControlName='phone'
+		placeholder='Телефон'
+	/>
+	<input
+		type='password'
+		formControlName='password'
+		placeholder='Пароль'
+	/>
+	<button type='submit'>Войти</button>
+</form>
+<button (click)='openEnterCodeModal()'>Войти с помощью смс</button>
+<button (click)='openRegModal()'>Регистрация</button>
+<button (click)='openAuthPartnersModal()'>Вход для партнёров</button>

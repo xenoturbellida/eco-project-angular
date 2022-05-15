@@ -20,6 +20,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalContainerComponent } from '@components/modals/modal-container/modal-container.component';
 import { ModalAuthComponent } from '@components/modals/modal-auth/modal-auth.component';
 import { DialogModule } from '@angular/cdk-experimental/dialog';
+import { ModalRegComponent } from '@components/modals/modal-reg/modal-reg.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ModalAuthPartnersComponent } from '@components/modals/modal-auth-partners/modal-auth-partners.component';
+import { ModalEnterCodeComponent } from '@components/modals/modal-enter-code/modal-enter-code.component';
+import { ModalRegPartnersComponent } from '@components/modals/modal-reg-partners/modal-reg-partners.component';
 
 @NgModule({
 	declarations: [
@@ -38,6 +43,10 @@ import { DialogModule } from '@angular/cdk-experimental/dialog';
       	MapComponent,
        	ModalContainerComponent,
        	ModalAuthComponent,
+        ModalRegComponent,
+        ModalAuthPartnersComponent,
+        ModalEnterCodeComponent,
+        ModalRegPartnersComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -45,6 +54,7 @@ import { DialogModule } from '@angular/cdk-experimental/dialog';
 		SwiperModule,
 		BrowserAnimationsModule,
 		DialogModule,
+		ReactiveFormsModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent]

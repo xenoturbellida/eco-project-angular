@@ -12,8 +12,7 @@ export class HeaderComponent {
 
   	constructor(private dialog: DialogService) { }
 
-	openSimpleDialog() {
+	openAuthDialog() {
 		this.dialog.openDialog(ModalAuthComponent);
 	}
-
 }

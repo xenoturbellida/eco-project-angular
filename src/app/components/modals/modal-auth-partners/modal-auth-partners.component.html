@@ -1,0 +1,18 @@
+<form
+	[formGroup]='form'
+	(ngSubmit)='onSubmit()'
+>
+	<input
+		type='email'
+		placeholder='Email'
+		formControlName='email'
+	/>
+	<input
+		type='password'
+		placeholder='Пароль'
+		formControlName='password'
+	/>
+	<button type='submit'>Войти</button>
+</form>
+<button (click)='openRegModal()'>Войти с помощью смс</button>
+<button (click)='openRegPartnersModal()'>Регистрация</button>

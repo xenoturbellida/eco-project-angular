@@ -1,0 +1,18 @@
+<form
+	[formGroup]='form'
+	(ngSubmit)='onSubmit()'
+>
+	<input
+		type='tel'
+		formControlName='phone'
+		placeholder='Телефон'
+	/>
+	<input
+		type='password'
+		formControlName='password'
+		placeholder='Пароль'
+	/>
+	<button type='submit'>Получить код</button>
+</form>
+<button (click)='openAuthModal()'>Я уже зарегистрировался(-ась)</button>
+<button (click) = 'openAuthPartners()'>Вход для партнёров</button>
