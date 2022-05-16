@@ -7,8 +7,25 @@
 		formControlName='code'
 		placeholder='Код'
 	/>
-	<button type='submit'>Отправить</button>
+	<button
+		appButton
+		type='submit'
+	>
+		Отправить
+	</button>
 </form>
-<button (click)='openRegModal()'>Не получил(-а) код</button>
-<button (click) = 'openAuthPartners()'>Вход для партнёров</button>
+<button
+	appButton
+	theme='LINK'
+	(click)='openRegModal()'
+>
+	Не получил(-а) код
+</button>
+<button
+	appButton
+	theme='GRAY'
+	(click) = 'openAuthPartners()'
+>
+	Вход для партнёров
+</button>
 

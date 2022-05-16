@@ -12,8 +12,32 @@
 		formControlName='password'
 		placeholder='Пароль'
 	/>
-	<button type='submit'>Войти</button>
+	<button
+		appButton
+		type='submit'
+	>
+		Войти
+	</button>
 </form>
-<button (click)='openEnterCodeModal()'>Войти с помощью смс</button>
-<button (click)='openRegModal()'>Регистрация</button>
-<button (click)='openAuthPartnersModal()'>Вход для партнёров</button>
+
+<button
+	appButton
+	theme='LINK'
+	(click)='openEnterCodeModal()'
+>
+	Войти с помощью смс
+</button>
+<button
+	appButton
+	theme='LINK'
+	(click)='openRegModal()'
+>
+	Регистрация
+</button>
+<button
+	appButton
+	theme='GRAY'
+	(click)='openAuthPartnersModal()'
+>
+	Вход для партнёров
+</button>

@@ -5,7 +5,7 @@
 	<input
 		type='text'
 		formControlName='org'
-		placeholder='Организация'
+		placeholder='Наименование организации'
 	/>
 	<input
 		type='email'
@@ -17,7 +17,24 @@
 		formControlName='password'
 		placeholder='Пароль'
 	/>
-	<button type='submit'>Получить код</button>
+	<button
+		appButton
+		type='submit'
+	>
+		Получить код
+	</button>
 </form>
-<button (click)='openAuthPartnersModal()'>Я уже зарегистрировался(-ась)</button>
-<button (click)='openAuthPartnersModal()'>Вход для партнёров</button>
+<button
+	appButton
+	theme='LINK'
+	(click)='openAuthPartnersModal()'
+>
+	Я уже зарегистрировался(-ась)
+</button>
+<button
+	appButton
+	theme='GRAY'
+	(click)='openAuthPartnersModal()'
+>
+	Вход для партнёров
+</button>

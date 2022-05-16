@@ -12,7 +12,24 @@
 		placeholder='Пароль'
 		formControlName='password'
 	/>
-	<button type='submit'>Войти</button>
+	<button
+		appButton
+		type='submit'
+	>
+		Войти
+	</button>
 </form>
-<button (click)='openRegModal()'>Войти с помощью смс</button>
-<button (click)='openRegPartnersModal()'>Регистрация</button>
+<button
+	(click)='openRegModal()'
+	appButton
+	theme='LINK'
+>
+	Войти с помощью смс
+</button>
+<button
+	appButton
+	theme='LINK'
+	(click)='openRegPartnersModal()'
+>
+	Регистрация
+</button>

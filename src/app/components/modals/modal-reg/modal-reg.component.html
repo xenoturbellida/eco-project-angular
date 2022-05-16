@@ -12,7 +12,24 @@
 		formControlName='password'
 		placeholder='Пароль'
 	/>
-	<button type='submit'>Получить код</button>
+	<button
+		appButton
+		type='submit'
+	>
+		Получить код
+	</button>
 </form>
-<button (click)='openAuthModal()'>Я уже зарегистрировался(-ась)</button>
-<button (click) = 'openAuthPartners()'>Вход для партнёров</button>
+<button
+	(click)='openAuthModal()'
+	appButton
+	theme='LINK'
+>
+	Я уже зарегистрировался(-ась)
+</button>
+<button
+	appButton
+	theme='GRAY'
+	(click) = 'openAuthPartners()'
+>
+	Вход для партнёров
+</button>

@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ButtonComponent } from '@components/ui/button/button.component';
 import { CollectPointPageComponent } from '@pages/collect-point-page/collect-point-page.component';
 import { EcoMarketPageComponent } from '@pages/eco-market-page/eco-market-page.component';
 import { MainPageComponent } from '@pages/main-page/main-page.component';
@@ -25,11 +24,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ModalAuthPartnersComponent } from '@components/modals/modal-auth-partners/modal-auth-partners.component';
 import { ModalEnterCodeComponent } from '@components/modals/modal-enter-code/modal-enter-code.component';
 import { ModalRegPartnersComponent } from '@components/modals/modal-reg-partners/modal-reg-partners.component';
+import { ButtonDirective } from '@directives/button.directive';
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		ButtonComponent,
 		CollectPointPageComponent,
 		EcoMarketPageComponent,
 		MainPageComponent,
@@ -47,6 +46,7 @@ import { ModalRegPartnersComponent } from '@components/modals/modal-reg-partners
         ModalAuthPartnersComponent,
         ModalEnterCodeComponent,
         ModalRegPartnersComponent,
+        ButtonDirective,
 	],
 	imports: [
 		BrowserModule,
