@@ -42,6 +42,10 @@ export class ModalRegComponent {
 		this.dialog.openDialog(ModalEnterCodeComponent);
 	}
 
+	closeModal(): void {
+		this.dialogRef.close();
+	}
+
 	openAuthModal(): void {
 		this.dialogRef.close();
 		this.dialog.openDialog(ModalAuthComponent);

@@ -1,49 +1,63 @@
-<h3>Вход</h3>
-<form
-	[formGroup]='form'
-	(ngSubmit)='onSubmit()'
->
-	<input
-		type='email'
-		placeholder='Email'
-		formControlName='email'
-		[class.input--error]='control("email")?.touched && control("email")?.dirty && control("email")?.errors'
-	/>
-	<ng-container
-		*ngIf='control("email")?.touched && control("email")?.dirty && control("email")?.errors'
-	>
-		<div class='error'>{{ getError(control("email")?.errors) }}</div>
-	</ng-container>
-	<input
-		type='password'
-		placeholder='Пароль'
-		formControlName='password'
-		[class.input--error]='control("password")?.touched && control("password")?.dirty && control("password")?.errors'
-	/>
-	<ng-container
-		*ngIf='control("password")?.touched && control("password")?.dirty && control("password")?.errors'
-	>
-		<div class='error'>{{ getError(control("password")?.errors) }}</div>
-	</ng-container>
-	<button
-		appButton
-		type='submit'
-		[disabled]='form.dirty && form.invalid'
-	>
-		Войти
+<header class='modal_header'>
+	<h3>Вход</h3>
+	<button appButton theme='CONTENT_ONLY' (click)='closeModal()'>
+		<img src='../../../../assets/close_btn.svg' alt='Кнопка закрытия'/>
 	</button>
-</form>
-<button
-	(click)='openRegModal()'
-	appButton
-	theme='LINK'
->
-	Войти с помощью смс
-</button>
-<button
-	appButton
-	theme='LINK'
-	(click)='openRegPartnersModal()'
->
-	Регистрация
-</button>
+</header>
+
+<div class='modal_content'>
+	<form
+		[formGroup]='form'
+		(ngSubmit)='onSubmit()'
+	>
+		<div>
+			<input
+				type='email'
+				placeholder='Email'
+				formControlName='email'
+				[class.input--error]='control("email")?.touched && control("email")?.dirty && control("email")?.errors'
+			/>
+			<ng-container
+				*ngIf='control("email")?.touched && control("email")?.dirty && control("email")?.errors'
+			>
+				<div class='error'>{{ getError(control("email")?.errors) }}</div>
+			</ng-container>
+		</div>
+		<div>
+			<input
+				type='password'
+				placeholder='Пароль'
+				formControlName='password'
+				[class.input--error]='control("password")?.touched && control("password")?.dirty && control("password")?.errors'
+			/>
+			<ng-container
+				*ngIf='control("password")?.touched && control("password")?.dirty && control("password")?.errors'
+			>
+				<div class='error'>{{ getError(control("password")?.errors) }}</div>
+			</ng-container>
+		</div>
+		<button
+			appButton
+			type='submit'
+			[disabled]='form.dirty && form.invalid'
+		>
+			Войти
+		</button>
+	</form>
+	<div class='links_wrapper'>
+		<button
+			(click)='openRegModal()'
+			appButton
+			theme='LINK'
+		>
+			Войти с помощью смс
+		</button>
+		<button
+			appButton
+			theme='LINK'
+			(click)='openRegPartnersModal()'
+		>
+			Регистрация
+		</button>
+	</div>
+</div>

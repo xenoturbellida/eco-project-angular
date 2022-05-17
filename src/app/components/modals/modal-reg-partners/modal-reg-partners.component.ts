@@ -54,6 +54,10 @@ export class ModalRegPartnersComponent {
 		this.dialogRef.close({ org: org, email: email, password: password })
 	}
 
+	closeModal(): void {
+		this.dialogRef.close();
+	}
+
 	control(name: string) {
 		return this.form.get(name);
 	}

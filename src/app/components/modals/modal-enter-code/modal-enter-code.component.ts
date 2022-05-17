@@ -33,6 +33,10 @@ export class ModalEnterCodeComponent {
 	  this.dialogRef.close({ code: code });
 	}
 
+	closeModal(): void {
+		this.dialogRef.close();
+	}
+
 	openRegModal(): void {
 		this.dialogRef.close();
 		this.dialog.openDialog(ModalRegComponent);

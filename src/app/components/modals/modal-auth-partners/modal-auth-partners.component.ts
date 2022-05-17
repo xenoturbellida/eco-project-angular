@@ -44,6 +44,10 @@ export class ModalAuthPartnersComponent {
 		this.dialogRef.close({ email: email, password: password })
 	}
 
+	closeModal(): void {
+		this.dialogRef.close();
+	}
+
 	openRegModal(): void {
 		this.dialogRef.close();
 		this.dialog.openDialog(ModalRegComponent);

@@ -1,60 +1,70 @@
-<h3>Вход или регистрация</h3>
-<form
-	[formGroup]='form'
-	(ngSubmit)='onSubmit()'
->
-	<input
-		type='text'
-		formControlName='org'
-		placeholder='Наименование организации'
-		[class.input--error]='control("org")?.touched && control("org")?.dirty && control("org")?.errors'
-	/>
-	<ng-container
-		*ngIf='control("org")?.touched && control("org")?.dirty && control("org")?.errors'
+<header class='modal_header'>
+	<h3>Вход или регистрация</h3>
+	<button appButton theme='CONTENT_ONLY' (click)='closeModal()'>
+		<img src='../../../../assets/close_btn.svg' alt='Кнопка закрытия'/>
+	</button>
+</header>
+
+<div class='modal_content'>
+	<form
+		[formGroup]='form'
+		(ngSubmit)='onSubmit()'
 	>
-		<div class='error'>{{ getError(control("org")?.errors) }}</div>
-	</ng-container>
-	<input
-		type='email'
-		formControlName='email'
-		placeholder='Email'
-		[class.input--error]='control("email")?.touched && control("email")?.dirty && control("email")?.errors'
-	/>
-	<ng-container
-		*ngIf='control("email")?.touched && control("email")?.dirty && control("email")?.errors'
-	>
-		<div class='error'>{{ getError(control("email")?.errors) }}</div>
-	</ng-container>
-	<input
-		type='password'
-		formControlName='password'
-		placeholder='Пароль'
-		[class.input--error]='control("password")?.touched && control("password")?.dirty && control("password")?.errors'
-	/>
-	<ng-container
-		*ngIf='control("password")?.touched && control("password")?.dirty && control("password")?.errors'
-	>
-		<div class='error'>{{ getError(control("password")?.errors) }}</div>
-	</ng-container>
+		<input
+			type='text'
+			formControlName='org'
+			placeholder='Наименование организации'
+			[class.input--error]='control("org")?.touched && control("org")?.dirty && control("org")?.errors'
+		/>
+		<ng-container
+			*ngIf='control("org")?.touched && control("org")?.dirty && control("org")?.errors'
+		>
+			<div class='error'>{{ getError(control("org")?.errors) }}</div>
+		</ng-container>
+		<input
+			type='email'
+			formControlName='email'
+			placeholder='Email'
+			[class.input--error]='control("email")?.touched && control("email")?.dirty && control("email")?.errors'
+		/>
+		<ng-container
+			*ngIf='control("email")?.touched && control("email")?.dirty && control("email")?.errors'
+		>
+			<div class='error'>{{ getError(control("email")?.errors) }}</div>
+		</ng-container>
+		<input
+			type='password'
+			formControlName='password'
+			placeholder='Пароль'
+			[class.input--error]='control("password")?.touched && control("password")?.dirty && control("password")?.errors'
+		/>
+		<ng-container
+			*ngIf='control("password")?.touched && control("password")?.dirty && control("password")?.errors'
+		>
+			<div class='error'>{{ getError(control("password")?.errors) }}</div>
+		</ng-container>
+		<button
+			appButton
+			type='submit'
+			[disabled]='form.dirty && form.invalid'
+		>
+			Получить код
+		</button>
+	</form>
 	<button
 		appButton
-		type='submit'
-		[disabled]='form.dirty && form.invalid'
+		theme='LINK'
+		(click)='openAuthPartnersModal()'
 	>
-		Получить код
+		Я уже зарегистрировался(-ась)
 	</button>
-</form>
-<button
-	appButton
-	theme='LINK'
-	(click)='openAuthPartnersModal()'
->
-	Я уже зарегистрировался(-ась)
-</button>
-<button
-	appButton
-	theme='GRAY'
-	(click)='openAuthPartnersModal()'
->
-	Вход для партнёров
-</button>
+	<button
+		appButton
+		theme='GRAY'
+		[forPartners]='true'
+		(click)='openAuthPartnersModal()'
+	>
+		Вход для партнёров
+	</button>
+</div>
+
