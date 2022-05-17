@@ -10,39 +10,45 @@
 		[formGroup]='form'
 		(ngSubmit)='onSubmit()'
 	>
-		<input
-			type='text'
-			formControlName='org'
-			placeholder='Наименование организации'
-			[class.input--error]='control("org")?.touched && control("org")?.dirty && control("org")?.errors'
-		/>
-		<ng-container
-			*ngIf='control("org")?.touched && control("org")?.dirty && control("org")?.errors'
-		>
-			<div class='error'>{{ getError(control("org")?.errors) }}</div>
-		</ng-container>
-		<input
-			type='email'
-			formControlName='email'
-			placeholder='Email'
-			[class.input--error]='control("email")?.touched && control("email")?.dirty && control("email")?.errors'
-		/>
-		<ng-container
-			*ngIf='control("email")?.touched && control("email")?.dirty && control("email")?.errors'
-		>
-			<div class='error'>{{ getError(control("email")?.errors) }}</div>
-		</ng-container>
-		<input
-			type='password'
-			formControlName='password'
-			placeholder='Пароль'
-			[class.input--error]='control("password")?.touched && control("password")?.dirty && control("password")?.errors'
-		/>
-		<ng-container
-			*ngIf='control("password")?.touched && control("password")?.dirty && control("password")?.errors'
-		>
-			<div class='error'>{{ getError(control("password")?.errors) }}</div>
-		</ng-container>
+		<div>
+			<input
+				type='text'
+				formControlName='org'
+				placeholder='Наименование организации'
+				[class.input--error]='control("org")?.touched && control("org")?.dirty && control("org")?.errors'
+			/>
+			<ng-container
+				*ngIf='control("org")?.touched && control("org")?.dirty && control("org")?.errors'
+			>
+				<div class='error'>{{ getError(control("org")?.errors) }}</div>
+			</ng-container>
+		</div>
+		<div>
+			<input
+				type='email'
+				formControlName='email'
+				placeholder='Email'
+				[class.input--error]='control("email")?.touched && control("email")?.dirty && control("email")?.errors'
+			/>
+			<ng-container
+				*ngIf='control("email")?.touched && control("email")?.dirty && control("email")?.errors'
+			>
+				<div class='error'>{{ getError(control("email")?.errors) }}</div>
+			</ng-container>
+		</div>
+		<div>
+			<input
+				type='password'
+				formControlName='password'
+				placeholder='Пароль'
+				[class.input--error]='control("password")?.touched && control("password")?.dirty && control("password")?.errors'
+			/>
+			<ng-container
+				*ngIf='control("password")?.touched && control("password")?.dirty && control("password")?.errors'
+			>
+				<div class='error'>{{ getError(control("password")?.errors) }}</div>
+			</ng-container>
+		</div>
 		<button
 			appButton
 			type='submit'
