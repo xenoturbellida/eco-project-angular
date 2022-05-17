@@ -17,11 +17,13 @@
 			</a>
 		<div class="header_wrapper">
 			<div class="header_right">
-				<img src="/assets/place.svg" alt="" class='header_icon'>
-				Город
+				<button appButton theme='CONTENT_ONLY' iconPosition='left'>
+					<img src="/assets/place.svg" alt="" class='header_icon'>
+					Город
+				</button>
 			</div>
 			<div class="header_right">
-				<button (click)='openAuthDialog()'>
+				<button appButton theme='CONTENT_ONLY' iconPosition='left' (click)='openAuthDialog()'>
 					<img src="/assets/enter.svg" alt="" class='header_icon'>
 					Войти
 				</button>
