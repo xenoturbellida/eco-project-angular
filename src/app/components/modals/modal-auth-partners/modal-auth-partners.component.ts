@@ -1,9 +1,10 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { DialogRef } from '@angular/cdk-experimental/dialog';
 import { DialogService } from '@services/dialog.service';
 import { ModalRegComponent } from '@components/modals/modal-reg/modal-reg.component';
 import { ModalRegPartnersComponent } from '@components/modals/modal-reg-partners/modal-reg-partners.component';
+import { ErrorsHandlerService } from '@services/errors-handler.service';
 
 @Component({
   selector: 'app-modal-auth-partners',
@@ -19,10 +20,18 @@ export class ModalAuthPartnersComponent {
 		private dialogRef: DialogRef<ModalAuthPartnersComponent>,
 		private dialog: DialogService,
 		private fb: FormBuilder,
+		private erHandler: ErrorsHandlerService,
 	) {
 		this.form = this.fb.group({
-			email: ['', [Validators.required]],
-			password: ['', [Validators.required]],
+			email: ['', [
+				Validators.required,
+				Validators.email
+			]],
+			password: ['', [
+				Validators.required,
+				Validators.maxLength(50),
+				Validators.minLength(8),
+			]],
 		})
 	}
 
@@ -43,5 +52,13 @@ export class ModalAuthPartnersComponent {
 	openRegPartnersModal(): void {
 		this.dialogRef.close();
 		this.dialog.openDialog(ModalRegPartnersComponent);
+	}
+
+	control(name: string) {
+		return this.form.get(name);
+	}
+
+	getError(errors: ValidationErrors | null | undefined): string | void {
+		return this.erHandler.getError(errors);
 	}
 }

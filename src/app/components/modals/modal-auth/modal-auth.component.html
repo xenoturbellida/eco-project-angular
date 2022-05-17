@@ -6,15 +6,28 @@
 		type='tel'
 		formControlName='phone'
 		placeholder='Телефон'
+		[class.input--error]='control("phone")?.touched && control("phone")?.dirty && control("phone")?.errors'
 	/>
+	<ng-container
+		*ngIf='control("phone")?.touched && control("phone")?.dirty && control("phone")?.errors'
+	>
+		<div class='error'>{{ getError(control("phone")?.errors) }}</div>
+	</ng-container>
 	<input
 		type='password'
 		formControlName='password'
 		placeholder='Пароль'
+		[class.input--error]='control("password")?.touched && control("password")?.dirty && control("password")?.errors'
 	/>
+	<ng-container
+		*ngIf='control("password")?.touched && control("password")?.dirty && control("password")?.errors'
+	>
+		<div class='error'>{{ getError(control("password")?.errors) }}</div>
+	</ng-container>
 	<button
 		appButton
 		type='submit'
+		[disabled]='form.dirty && form.invalid'
 	>
 		Войти
 	</button>

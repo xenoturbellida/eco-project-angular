@@ -6,10 +6,17 @@
 		type='text'
 		formControlName='code'
 		placeholder='Код'
+		[class.input--error]='control("code")?.touched && control("code")?.dirty && control("code")?.errors'
 	/>
+	<ng-container
+		*ngIf='control("code")?.touched && control("code")?.dirty && control("code")?.errors'
+	>
+		<div class='error'>{{ getError(control("code")?.errors) }}</div>
+	</ng-container>
 	<button
 		appButton
 		type='submit'
+		[disabled]='form.dirty && form.invalid'
 	>
 		Отправить
 	</button>
