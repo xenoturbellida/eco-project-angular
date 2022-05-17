@@ -1,4 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { ModalAuthComponent } from '@components/modals/modal-auth/modal-auth.component';
+import { DialogService } from '@services/dialog.service';
 
 @Component({
   selector: 'app-header',
@@ -6,11 +8,11 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./header.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
-  constructor() { }
+  	constructor(private dialog: DialogService) { }
 
-  ngOnInit(): void {
-  }
-
+	openAuthDialog() {
+		this.dialog.openDialog(ModalAuthComponent);
+	}
 }

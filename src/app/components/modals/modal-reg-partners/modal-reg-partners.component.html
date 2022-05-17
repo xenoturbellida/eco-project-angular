@@ -1,0 +1,40 @@
+<form
+	[formGroup]='form'
+	(ngSubmit)='onSubmit()'
+>
+	<input
+		type='text'
+		formControlName='org'
+		placeholder='Наименование организации'
+	/>
+	<input
+		type='email'
+		formControlName='email'
+		placeholder='Email'
+	/>
+	<input
+		type='password'
+		formControlName='password'
+		placeholder='Пароль'
+	/>
+	<button
+		appButton
+		type='submit'
+	>
+		Получить код
+	</button>
+</form>
+<button
+	appButton
+	theme='LINK'
+	(click)='openAuthPartnersModal()'
+>
+	Я уже зарегистрировался(-ась)
+</button>
+<button
+	appButton
+	theme='GRAY'
+	(click)='openAuthPartnersModal()'
+>
+	Вход для партнёров
+</button>

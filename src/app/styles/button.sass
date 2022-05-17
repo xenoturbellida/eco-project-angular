@@ -1,7 +1,4 @@
-\:host
-	::ng-deep
-		img
-			margin-right: 12px
+@import 'constants'
 
 .btn
 	font-family: 'Inter', sans-serif
@@ -11,6 +8,8 @@
 	cursor: pointer
 	padding: 0
 
+	&--icon_left img
+		margin-right: 12px
 
 	&--green
 		width: 170px
@@ -33,3 +32,12 @@
 		background: rgba(62, 80, 114, 0.08)
 		&:hover
 			background-color: rgba(54, 73, 101, 0.12)
+
+	&--link
+		background: none
+		border: none
+		color: $c-primary
+		width: available
+		height: 40px
+		font-size: 16px
+		cursor: pointer

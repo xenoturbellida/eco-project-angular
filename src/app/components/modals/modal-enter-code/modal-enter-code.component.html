@@ -1,0 +1,31 @@
+<form
+	[formGroup]='form'
+	(ngSubmit)='onSubmit()'
+>
+	<input
+		type='text'
+		formControlName='code'
+		placeholder='Код'
+	/>
+	<button
+		appButton
+		type='submit'
+	>
+		Отправить
+	</button>
+</form>
+<button
+	appButton
+	theme='LINK'
+	(click)='openRegModal()'
+>
+	Не получил(-а) код
+</button>
+<button
+	appButton
+	theme='GRAY'
+	(click) = 'openAuthPartners()'
+>
+	Вход для партнёров
+</button>
+
