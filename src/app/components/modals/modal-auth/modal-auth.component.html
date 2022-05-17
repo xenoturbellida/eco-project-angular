@@ -1,56 +1,74 @@
-<form
-	[formGroup]='form'
-	(ngSubmit)='onSubmit()'
->
-	<input
-		type='tel'
-		formControlName='phone'
-		placeholder='Телефон'
-		[class.input--error]='control("phone")?.touched && control("phone")?.dirty && control("phone")?.errors'
-	/>
-	<ng-container
-		*ngIf='control("phone")?.touched && control("phone")?.dirty && control("phone")?.errors'
+<header class='modal_header'>
+	<h3>Вход</h3>
+	<button appButton theme='CONTENT_ONLY' (click)='closeModal()'>
+		<img src='../../../../assets/close_btn.svg' alt='Кнопка закрытия'/>
+	</button>
+</header>
+
+<div class='modal_content'>
+	<form
+		[formGroup]='form'
+		(ngSubmit)='onSubmit()'
 	>
-		<div class='error'>{{ getError(control("phone")?.errors) }}</div>
-	</ng-container>
-	<input
-		type='password'
-		formControlName='password'
-		placeholder='Пароль'
-		[class.input--error]='control("password")?.touched && control("password")?.dirty && control("password")?.errors'
-	/>
-	<ng-container
-		*ngIf='control("password")?.touched && control("password")?.dirty && control("password")?.errors'
-	>
-		<div class='error'>{{ getError(control("password")?.errors) }}</div>
-	</ng-container>
+		<div class='input--group'>
+			<input
+				type='tel'
+				formControlName='phone'
+				placeholder='Телефон'
+				[class.input--error]='control("phone")?.touched && control("phone")?.dirty && control("phone")?.errors'
+			/>
+			<ng-container
+				*ngIf='control("phone")?.touched && control("phone")?.dirty && control("phone")?.errors'
+			>
+				<div class='error'>{{ getError(control("phone")?.errors) }}</div>
+			</ng-container>
+		</div>
+
+		<div class='input--group'>
+			<input
+				type='password'
+				formControlName='password'
+				placeholder='Пароль'
+				[class.input--error]='control("password")?.touched && control("password")?.dirty && control("password")?.errors'
+			/>
+			<ng-container
+				*ngIf='control("password")?.touched && control("password")?.dirty && control("password")?.errors'
+			>
+				<div class='error'>{{ getError(control("password")?.errors) }}</div>
+			</ng-container>
+		</div>
+
+		<button
+			appButton
+			type='submit'
+			[disabled]='form.dirty && form.invalid'
+		>
+			Войти
+		</button>
+	</form>
+	<div class='links_wrapper'>
+		<button
+			appButton
+			theme='LINK'
+			(click)='openEnterCodeModal()'
+		>
+			Войти с помощью смс
+		</button>
+		<button
+			appButton
+			theme='LINK'
+			(click)='openRegModal()'
+		>
+			Регистрация
+		</button>
+	</div>
 	<button
 		appButton
-		type='submit'
-		[disabled]='form.dirty && form.invalid'
+		theme='GRAY'
+		[forPartners]='true'
+		(click)='openAuthPartnersModal()'
 	>
-		Войти
+		Вход для партнёров
 	</button>
-</form>
+</div>
 
-<button
-	appButton
-	theme='LINK'
-	(click)='openEnterCodeModal()'
->
-	Войти с помощью смс
-</button>
-<button
-	appButton
-	theme='LINK'
-	(click)='openRegModal()'
->
-	Регистрация
-</button>
-<button
-	appButton
-	theme='GRAY'
-	(click)='openAuthPartnersModal()'
->
-	Вход для партнёров
-</button>

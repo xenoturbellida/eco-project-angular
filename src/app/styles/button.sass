@@ -2,6 +2,7 @@
 
 .btn
 	font-family: 'Inter', sans-serif
+	font-size: 16px
 	color: rgba(0, 11, 38, 0.56)
 	border: none
 	border-radius: 8px
@@ -38,9 +39,17 @@
 		border: none
 		color: $c-primary
 		width: available
-		height: 40px
 		font-size: 16px
 		cursor: pointer
+		margin-top: 16px
+
+	&--partners
+		margin-top: 32px
+		color: $c-btn-partners-font
+
+	&--contentOnly
+		width: fit-content
+		background-color: transparent
 
 	&:disabled
 		background-color: $c-disabled-bg

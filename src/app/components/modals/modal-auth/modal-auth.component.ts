@@ -47,6 +47,10 @@ export class ModalAuthComponent {
 	  this.dialogRef.close({ phone: phone, password: password })
 	}
 
+	closeModal(): void {
+		this.dialogRef.close();
+	}
+
 	openEnterCodeModal(): void {
 		this.dialogRef.close();
 		this.dialog.openDialog(ModalEnterCodeComponent);
