@@ -25,6 +25,11 @@ import { ModalAuthPartnersComponent } from '@components/modals/modal-auth-partne
 import { ModalEnterCodeComponent } from '@components/modals/modal-enter-code/modal-enter-code.component';
 import { ModalRegPartnersComponent } from '@components/modals/modal-reg-partners/modal-reg-partners.component';
 import { ButtonDirective } from '@directives/button.directive';
+import { ToastContainerModule, ToastrModule } from 'ngx-toastr';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { UrlInterceptorService } from '@services/url-interceptor.service';
+import { AuthInterceptorService } from '@services/auth-interceptor.service';
+import { ErrorInterceptorService } from '@services/error-interceptor.service';
 
 @NgModule({
 	declarations: [
@@ -55,8 +60,32 @@ import { ButtonDirective } from '@directives/button.directive';
 		BrowserAnimationsModule,
 		DialogModule,
 		ReactiveFormsModule,
+		HttpClientModule,
+		ToastrModule.forRoot({
+			timeOut: 3000,
+			progressBar: true,
+			positionClass: 'toast-bottom-center'
+		}),
+		BrowserAnimationsModule,
+		ToastContainerModule
 	],
-	providers: [],
+	providers: [
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: UrlInterceptorService,
+			multi: true,
+		},
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: AuthInterceptorService,
+			multi: true,
+		},
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: ErrorInterceptorService,
+			multi: true
+		}
+	],
 	bootstrap: [AppComponent]
 })
 export class AppModule {

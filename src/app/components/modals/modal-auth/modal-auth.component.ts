@@ -5,6 +5,8 @@ import { ModalRegComponent } from '@components/modals/modal-reg/modal-reg.compon
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ModalEnterCodeComponent } from '@components/modals/modal-enter-code/modal-enter-code.component';
 import { ModalAuthPartnersComponent } from '@components/modals/modal-auth-partners/modal-auth-partners.component';
+import { ToastService } from '@services/toast.service';
+import { AuthService } from '@services/auth.service';
 
 @Component({
   selector: 'app-modal-auth',
@@ -19,21 +21,32 @@ export class ModalAuthComponent {
 	constructor(
 	  private dialogRef: DialogRef<ModalAuthComponent>,
 	  private dialog: DialogService,
+	  private toast: ToastService,
+	  private authService: AuthService,
 	  private fb: FormBuilder,
 	  ) {
 		this.form = this.fb.group({
-			phone: ['', [Validators.required]],
+			login: ['', [Validators.required]],
 			password: ['', [Validators.required]],
 		})
 	}
 
 	onSubmit(): void {
 	  const password = this.form.get('password')?.value;
-	  const phone = this.form.get('phone')?.value;
+	  const login = this.form.get('login')?.value;
 	  console.log('modal password', password);
-	  console.log('modal phone', phone);
-	  // Call API here
-	  this.dialogRef.close({ phone: phone, password: password })
+	  console.log('modal login', login);
+		if (!this.form.valid) {
+			this.toast.error('Заполните все поля!');
+			return;
+		}
+		this.authService.authorize(this.form.value).subscribe(res => {
+			this.toast.success('Добро пожаловать');
+			this.authService.token = res.token;
+		}, err => {
+			console.log(err);
+		})
+	  this.dialogRef.close({ login: login, password: password })
 	}
 
 	openEnterCodeModal(): void {

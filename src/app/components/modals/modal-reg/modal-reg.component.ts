@@ -5,6 +5,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalEnterCodeComponent } from '@components/modals/modal-enter-code/modal-enter-code.component';
 import { ModalAuthComponent } from '@components/modals/modal-auth/modal-auth.component';
 import { ModalAuthPartnersComponent } from '@components/modals/modal-auth-partners/modal-auth-partners.component';
+import { ToastService } from '@services/toast.service';
+import { AuthService } from '@services/auth.service';
 
 @Component({
   selector: 'app-modal-reg',
@@ -19,6 +21,8 @@ export class ModalRegComponent {
 		private dialogRef: DialogRef<ModalRegComponent>,
 		private dialog: DialogService,
 		private fb: FormBuilder,
+		private toast: ToastService,
+		private authService: AuthService,
 	) {
 		this.form = this.fb.group({
 			phone: ['', [Validators.required]],
@@ -31,7 +35,15 @@ export class ModalRegComponent {
 		const phone = this.form.get('phone')?.value;
 		console.log('modal password', password);
 		console.log('modal phone', phone);
-		// Call API here
+		if (!this.form.valid) {
+			this.toast.error('Заполните все поля!');
+			return;
+		}
+		this.authService.registration(this.form.value).subscribe(res => {
+			this.toast.success('Добро пожаловать');
+		}, err => {
+			console.log(err);
+		})
 		this.dialogRef.close({ phone: phone, password: password });
 		this.dialog.openDialog(ModalEnterCodeComponent);
 	}
