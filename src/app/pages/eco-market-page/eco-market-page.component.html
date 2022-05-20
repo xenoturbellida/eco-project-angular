@@ -1,7 +1,13 @@
 <app-header></app-header>
 <main class='content_aligner'>
 	<div class='main_container'>
-		<div class='market_container' *ngFor="let item of (cards$|async)">
+		<h1>Эко маркет</h1>
+		<div class='content_container'>
+			<div class='filters'>
+				Filters
+			</div>
+			<div class='market_container'>
+			<div *ngFor="let item of (cards$|async)">
 				<app-eco-market-card
 					[photo]="item.photo"
 					[title]="item.title"
@@ -9,6 +15,8 @@
 					[category]="item.category"
 					[price]="item.price"
 				></app-eco-market-card>
+			</div>
+			</div>
 		</div>
 	</div>
 </main>
