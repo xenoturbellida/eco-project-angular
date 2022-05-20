@@ -1,12 +1,14 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { DialogRef } from '@angular/cdk-experimental/dialog';
 import { DialogService } from '@services/dialog.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { ModalEnterCodeComponent } from '@components/modals/modal-enter-code/modal-enter-code.component';
 import { ModalAuthComponent } from '@components/modals/modal-auth/modal-auth.component';
 import { ModalAuthPartnersComponent } from '@components/modals/modal-auth-partners/modal-auth-partners.component';
 import { ToastService } from '@services/toast.service';
 import { AuthService } from '@services/auth.service';
+import { ErrorsHandlerService } from '@services/errors-handler.service';
+import { ValidatePhone } from "@utils/validation.utils";
 
 @Component({
   selector: 'app-modal-reg',
@@ -23,9 +25,13 @@ export class ModalRegComponent {
 		private fb: FormBuilder,
 		private toast: ToastService,
 		private authService: AuthService,
+		private erHandler: ErrorsHandlerService,
 	) {
 		this.form = this.fb.group({
-			phone: ['', [Validators.required]],
+			phone: ['', [
+				Validators.required,
+				ValidatePhone,
+			]],
 			password: ['', [Validators.required]],
 		})
 	}
@@ -48,6 +54,10 @@ export class ModalRegComponent {
 		this.dialog.openDialog(ModalEnterCodeComponent);
 	}
 
+	closeModal(): void {
+		this.dialogRef.close();
+	}
+
 	openAuthModal(): void {
 		this.dialogRef.close();
 		this.dialog.openDialog(ModalAuthComponent);
@@ -56,5 +66,13 @@ export class ModalRegComponent {
 	openAuthPartners(): void {
 		this.dialogRef.close();
 		this.dialog.openDialog(ModalAuthPartnersComponent);
+	}
+
+	control(name: string) {
+		return this.form.get(name);
+	}
+
+	getError(errors: ValidationErrors | null | undefined): string | void {
+		return this.erHandler.getError(errors);
 	}
 }

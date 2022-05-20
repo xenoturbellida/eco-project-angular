@@ -1,35 +1,65 @@
-<form
-	[formGroup]='form'
-	(ngSubmit)='onSubmit()'
->
-	<input
-		type='tel'
-		formControlName='phone'
-		placeholder='Телефон'
-	/>
-	<input
-		type='password'
-		formControlName='password'
-		placeholder='Пароль'
-	/>
+<header class='modal_header'>
+	<h3>Вход или регистрация</h3>
+	<button appButton theme='CONTENT_ONLY' (click)='closeModal()'>
+		<img src='../../../../assets/close_btn.svg' alt='Кнопка закрытия'/>
+	</button>
+</header>
+
+<div class='modal_content'>
+	<form
+		[formGroup]='form'
+		(ngSubmit)='onSubmit()'
+	>
+		<div>
+			<input
+				type='tel'
+				formControlName='phone'
+				placeholder='Телефон'
+				[class.input--error]='control("phone")?.touched && control("phone")?.dirty && control("phone")?.errors'
+			/>
+			<ng-container
+				*ngIf='control("phone")?.touched && control("phone")?.dirty && control("phone")?.errors'
+			>
+				<div class='error'>{{ getError(control("phone")?.errors) }}</div>
+			</ng-container>
+		</div>
+
+		<div>
+			<input
+				type='password'
+				formControlName='password'
+				placeholder='Пароль'
+				[class.input--error]='control("password")?.touched && control("password")?.dirty && control("password")?.errors'
+			/>
+			<ng-container
+				*ngIf='control("password")?.touched && control("password")?.dirty && control("password")?.errors'
+			>
+				<div class='error'>{{ getError(control("password")?.errors) }}</div>
+			</ng-container>
+		</div>
+
+		<button
+			appButton
+			type='submit'
+			[disabled]='form.dirty && form.invalid'
+		>
+			Получить код
+		</button>
+	</form>
+	<button
+		(click)='openAuthModal()'
+		appButton
+		theme='LINK'
+	>
+		Я уже зарегистрировался(-ась)
+	</button>
 	<button
 		appButton
-		type='submit'
+		theme='GRAY'
+		[forPartners]='true'
+		(click) = 'openAuthPartners()'
 	>
-		Получить код
+		Вход для партнёров
 	</button>
-</form>
-<button
-	(click)='openAuthModal()'
-	appButton
-	theme='LINK'
->
-	Я уже зарегистрировался(-ась)
-</button>
-<button
-	appButton
-	theme='GRAY'
-	(click) = 'openAuthPartners()'
->
-	Вход для партнёров
-</button>
+</div>
+

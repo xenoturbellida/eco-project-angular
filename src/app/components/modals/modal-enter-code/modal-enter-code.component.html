@@ -1,31 +1,52 @@
-<form
-	[formGroup]='form'
-	(ngSubmit)='onSubmit()'
->
-	<input
-		type='text'
-		formControlName='code'
-		placeholder='Код'
-	/>
+<header class='modal_header'>
+	<h3>Ввести код</h3>
+	<button appButton theme='CONTENT_ONLY' (click)='closeModal()'>
+		<img src='../../../../assets/close_btn.svg' alt='Кнопка закрытия'/>
+	</button>
+</header>
+
+<div class='modal_content'>
+	<form
+		[formGroup]='form'
+		(ngSubmit)='onSubmit()'
+	>
+		<div>
+			<input
+				type='text'
+				formControlName='code'
+				placeholder='Код'
+				[class.input--error]='control("code")?.touched && control("code")?.dirty && control("code")?.errors'
+			/>
+			<ng-container
+				*ngIf='control("code")?.touched && control("code")?.dirty && control("code")?.errors'
+			>
+				<div class='error'>{{ getError(control("code")?.errors) }}</div>
+			</ng-container>
+		</div>
+
+		<button
+			appButton
+			type='submit'
+			[disabled]='form.dirty && form.invalid'
+		>
+			Отправить
+		</button>
+	</form>
 	<button
 		appButton
-		type='submit'
+		theme='LINK'
+		(click)='openRegModal()'
 	>
-		Отправить
+		Не получил(-а) код
 	</button>
-</form>
-<button
-	appButton
-	theme='LINK'
-	(click)='openRegModal()'
->
-	Не получил(-а) код
-</button>
-<button
-	appButton
-	theme='GRAY'
-	(click) = 'openAuthPartners()'
->
-	Вход для партнёров
-</button>
+	<button
+		appButton
+		theme='GRAY'
+		[forPartners]='true'
+		(click) = 'openAuthPartners()'
+	>
+		Вход для партнёров
+	</button>
+</div>
+
 
