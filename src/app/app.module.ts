@@ -30,6 +30,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { UrlInterceptorService } from '@services/url-interceptor.service';
 import { AuthInterceptorService } from '@services/auth-interceptor.service';
 import { ErrorInterceptorService } from '@services/error-interceptor.service';
+import { EcoMarketCardComponent } from './components/cards/eco-market-card/eco-market-card.component';
 
 @NgModule({
 	declarations: [
@@ -52,6 +53,7 @@ import { ErrorInterceptorService } from '@services/error-interceptor.service';
         ModalEnterCodeComponent,
         ModalRegPartnersComponent,
         ButtonDirective,
+        EcoMarketCardComponent,
 	],
 	imports: [
 		BrowserModule,

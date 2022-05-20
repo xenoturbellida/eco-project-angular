@@ -1,2 +1,14 @@
 <app-header></app-header>
-<p>eco-market-page works!</p>
+<main class='content_aligner'>
+	<div class='main_container'>
+		<div class='market_container' *ngFor="let item of (cards$|async)">
+				<app-eco-market-card
+					[photo]="item.photo"
+					[title]="item.title"
+					[brand]="item.brand"
+					[category]="item.category"
+					[price]="item.price"
+				></app-eco-market-card>
+		</div>
+	</div>
+</main>
