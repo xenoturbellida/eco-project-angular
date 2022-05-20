@@ -1,16 +1,33 @@
 .content_aligner
-	width: 100vw
+	max-width: 100%
+	display: flex
+	justify-content: center
 	.main_container
 		display: flex
 		flex-direction: column
+		max-width: 1200px
+		width: 100%
+		margin-bottom: 20px
 		.content_container
 			display: flex
 			flex-direction: row
-			overflow: hidden
+			width: 100%
+			justify-content: space-between
 			.filters
-				width: 20vw
+				box-sizing: border-box
+				width: 17vw
+				min-width: 253px
+				//flex-direction: column
+				//display: flex
+				//height: max-content
+				//position: sticky
+				//top: 20vh
 			.market_container
-				display: grid
-				grid-template-columns: repeat(4, 1fr)
-				gap: 10px 15px
-				justify-content: center
+				list-style-type: none
+				display: flex
+				gap: 48px 24px
+				flex-wrap: wrap
+				flex: 0 0 72.5%
+				justify-content: right
+				margin: 0
+				padding: 0
