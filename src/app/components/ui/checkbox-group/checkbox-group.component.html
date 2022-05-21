@@ -1,0 +1,29 @@
+<div class="wrapper">
+	<div class="container">
+		<div class="items_wrapper">
+			<div class="filter_block">
+				<h3>Пол</h3>
+				<div *ngFor="let i of genders$">
+					<app-checkbox [name]='i.name'></app-checkbox>
+				</div>
+			</div>
+
+			<div class="filter_block">
+				<h3>Тип товара</h3>
+				<app-checkbox name='Выбрать все'></app-checkbox>
+				<div *ngFor="let i of categories$">
+					<app-checkbox [name]='i.name'></app-checkbox>
+				</div>
+			</div>
+
+			<div class="filter_block">
+				<h3>Бренд</h3>
+				<app-checkbox name='Выбрать все'></app-checkbox>
+				<div *ngFor="let i of brands$">
+					<app-checkbox [name]='i.name'></app-checkbox>
+				</div>
+			</div>
+		</div>
+	</div>
+	<button appButton theme='GRAY' class='filter_btn'>Сбросить фильтры</button>
+</div>
