@@ -1,7 +1,8 @@
 .input_checkbox
-	//position: absolute
-	display: none
-	z-index: -1
+	position: absolute
+	width: 1em
+	height: 1em
+	margin-right: 0.5em
 	opacity: 0
 
 .checkbox+label
@@ -40,7 +41,7 @@
 
 /* стили для чекбокса, находящегося в фокусе */
 .checkbox:focus+label::before
-	box-shadow: 0 0 0 0.2rem rgba(0, 255, 210, 0.45)
+	box-shadow: 0 0 0 0.1rem rgba(0, 255, 210, 0.45)
 
 /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
 .checkbox:focus:not(:checked)+label::before
