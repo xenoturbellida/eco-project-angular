@@ -26,3 +26,28 @@
 				justify-content: right
 				margin: 0
 				padding: 0
+				.card
+					border-radius: 16px
+					cursor: pointer
+					position: relative
+					transform-style: preserve-3d
+					min-width: 253px
+					height: 371px
+					background: none
+					border: none
+					text-align: start
+
+					&__face
+						display: block
+						position: absolute
+						width: 100%
+						height: 100%
+						border-radius: inherit
+						backface-visibility: hidden
+						object-fit: cover
+				.back
+					transform: rotateY(180deg)
+					backface-visibility: hidden
+					height: 100%
+					width: 100%
+					border-radius: 16px

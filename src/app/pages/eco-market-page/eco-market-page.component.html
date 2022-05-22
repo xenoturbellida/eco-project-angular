@@ -7,15 +7,24 @@
 				<app-checkbox-group></app-checkbox-group>
 			</div>
 			<div class='market_container'>
-				<app-balance-card balance='200'></app-balance-card>
-			<div *ngFor="let item of (cards$|async)">
-				<app-eco-market-card
-					[photo]="item.photo"
-					[title]="item.title"
-					[brand]="item.brand"
-					[category]="item.category"
-					[price]="item.price"
+			<div *ngFor="let item of cardItems">
+				<button (mouseenter)='cardHovered(item)' (mouseleave)='cardUnhovered(item)'
+				        [@cardFlip]='item.state'
+				        class='card'>
+					<div class='card__face front'>
+					<app-eco-market-card
+					[photo]="item.data.photo"
+					[title]="item.data.title"
+					[brand]="item.data.brand"
+					[category]="item.data.category"
+					[price]="item.data.price"
 				></app-eco-market-card>
+					</div>
+					<div class='face back'>
+						<app-balance-card balance='200'></app-balance-card>
+					</div>
+				</button>
+
 			</div>
 			</div>
 		</div>

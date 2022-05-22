@@ -1,16 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { MarketItem } from '@models/item.model';
 
-interface MarketItem {
-	id: number;
-	brand: string;
-	photo: string;
-	title: string;
-	category: string;
-	price: number;
-	rating: number;
-	date: string
-}
 
 const marketItemsMock: Array<MarketItem> = [
 	{
@@ -119,7 +110,12 @@ const marketItemsMock: Array<MarketItem> = [
 	providedIn: 'root'
 })
 export class EcomarketService {
-	cards$ :BehaviorSubject<Array<MarketItem>> = new BehaviorSubject<Array<MarketItem>>(marketItemsMock);
+	// cards$ :BehaviorSubject<Array<MarketItem>> = new BehaviorSubject<Array<MarketItem>>(marketItemsMock);
+
+	getGoods() {
+		return marketItemsMock;
+	}
+
 
 	constructor() {
 	}
