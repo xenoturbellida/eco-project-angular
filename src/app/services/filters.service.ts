@@ -5,6 +5,13 @@ interface FilterItem {
 	checked: boolean;
 }
 
+const filtersMock: Array<FilterItem> = [
+	{ name: 'По популярности', checked: false },
+	{ name: 'По цене', checked: false },
+	{ name: 'По новизне', checked: false }
+];
+
+
 const gendersMock: Array<FilterItem> = [
 	{ name: 'Мужской', checked: false },
 	{ name: 'Женский', checked: false }
@@ -32,6 +39,7 @@ export class FiltersService {
 	genders$: Array<FilterItem> = gendersMock;
 	categories$: Array<FilterItem> = categoriesMock;
 	brands$: Array<FilterItem> = brandsMock;
+	filters$: Array<FilterItem> = filtersMock;
 
 	constructor() {
 	}

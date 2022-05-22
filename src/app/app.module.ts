@@ -35,6 +35,7 @@ import { CheckboxComponent } from './components/ui/checkbox/checkbox.component';
 import { CheckboxGroupComponent } from './components/ui/checkbox-group/checkbox-group.component';
 import { BalanceCardComponent } from './components/cards/balance-card/balance-card.component';
 import { ModalQrCodeComponent } from './components/modals/modal-qr-code/modal-qr-code.component';
+import { FiltersGroupComponent } from './components/ui/filters-group/filters-group.component';
 
 @NgModule({
 	declarations: [
@@ -62,6 +63,7 @@ import { ModalQrCodeComponent } from './components/modals/modal-qr-code/modal-qr
         CheckboxGroupComponent,
         BalanceCardComponent,
         ModalQrCodeComponent,
+        FiltersGroupComponent,
 	],
 	imports: [
 		BrowserModule,
