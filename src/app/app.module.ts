@@ -33,6 +33,7 @@ import { ErrorInterceptorService } from '@services/error-interceptor.service';
 import { EcoMarketCardComponent } from './components/cards/eco-market-card/eco-market-card.component';
 import { CheckboxComponent } from './components/ui/checkbox/checkbox.component';
 import { CheckboxGroupComponent } from './components/ui/checkbox-group/checkbox-group.component';
+import { BalanceCardComponent } from './components/cards/balance-card/balance-card.component';
 
 @NgModule({
 	declarations: [
@@ -58,6 +59,7 @@ import { CheckboxGroupComponent } from './components/ui/checkbox-group/checkbox-
         EcoMarketCardComponent,
         CheckboxComponent,
         CheckboxGroupComponent,
+        BalanceCardComponent,
 	],
 	imports: [
 		BrowserModule,

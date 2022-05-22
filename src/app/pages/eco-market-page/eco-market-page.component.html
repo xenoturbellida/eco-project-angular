@@ -7,6 +7,7 @@
 				<app-checkbox-group></app-checkbox-group>
 			</div>
 			<div class='market_container'>
+				<app-balance-card balance='200'></app-balance-card>
 			<div *ngFor="let item of (cards$|async)">
 				<app-eco-market-card
 					[photo]="item.photo"
