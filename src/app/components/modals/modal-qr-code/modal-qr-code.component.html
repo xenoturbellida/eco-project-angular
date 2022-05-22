@@ -1,0 +1,20 @@
+<header class='modal_header'>
+	<h3>QR-код на покупку создан</h3>
+	<button appButton theme='CONTENT_ONLY' (click)='closeModal()'>
+		<img src='../../../../assets/close_btn.svg' alt='Кнопка закрытия'/>
+	</button>
+</header>
+<div class='get_code_card_wrapper'>
+	<div class='qr_description'>
+		При оплате покажите его сотруднику на кассе
+	</div>
+	<div class='img_wrapper'>
+		<img src='../../assets/qrCode.jpg' alt='qr-код' />
+	</div>
+	<h4>E25GHR0P</h4>
+	<div class='qr_description'>
+		Если не получается отсканировать QR-код,
+		введите код вручную или продиктуйте сотруднику на кассе
+	</div>
+	<button appButton theme='GREEN' class='btn' (click)='closeModal()'>Закрыть</button>
+</div>

@@ -1,4 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { DialogService } from '@services/dialog.service';
+import { ModalQrCodeComponent } from '@components/modals/modal-qr-code/modal-qr-code.component';
 
 @Component({
   selector: 'app-balance-card',
@@ -10,8 +12,12 @@ export class BalanceCardComponent {
 
 	@Input() balance: string;
 
-	constructor() {
+	constructor(private dialog: DialogService) {
 		this.balance ="";
+	}
+
+	openQRCodeDialog() {
+		this.dialog.openDialog(ModalQrCodeComponent);
 	}
 
 }
