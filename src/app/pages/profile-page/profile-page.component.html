@@ -1,12 +1,16 @@
 <div class="main">
 	<app-header></app-header>
+	<h1 class='page_heading'>Личный кабинет</h1>
 	<div class="container">
+
 		<div class='profile__info'>
-			<img src='../../../assets/userPhotoMock.png' alt='фотография пользователя'/>
-			<div>
-				<p>{{user?.firstname}} {{user?.lastname}}</p>
-				<p>{{user?.phone_number}}</p>
-				<p>{{user?.email}}</p>
+			<div class='photo_container'>
+				<img src='../../../assets/userPhotoMock.png' alt='фотография пользователя'/>
+			</div>
+			<div class='profile__info__main'>
+				<p class='name'>{{user?.firstname}} {{user?.lastname}}</p>
+				<p class='profile__info__main__private'>{{user?.phone_number}}</p>
+				<p class='profile__info__main__private'>{{user?.email}}</p>
 			</div>
 			<button appButton theme='GRAY'>Редактировать</button>
 		</div>

@@ -8,14 +8,19 @@
 	flex-direction: column
 	justify-content: space-between
 
+.container, .page_heading
+	max-width: 1200px
+	width: 100%
+
 .container
+	margin: 0 auto
 	display: flex
 	flex-direction: row
 	height: 100%
-	max-width: 1200px
-	margin: 0 auto
-	width: 100%
 	gap: 47px
+
+.page_heading
+	margin: 40px auto
 
 .profile
 	&__info
@@ -23,6 +28,18 @@
 		border-radius: 20px
 		height: min-content
 		flex: 0 0 32%
+		display: flex
+		flex-direction: column
+		align-items: center
+		gap: 24px
+		padding: 32px
+		box-sizing: border-box
+
+		&__main
+			display: flex
+			flex-direction: column
+			align-items: center
+
 
 	&__assets
 		max-width: 768px
@@ -42,3 +59,33 @@
 				border: none
 				border-bottom: 3px solid $c-primary
 				color: $c-tab-font
+
+
+
+.photo_container
+	max-width: 128px
+	max-height: 128px
+
+	img
+		width: 100%
+
+.name
+	font-size: 24px
+	line-height: 28px
+	color: #000B26E0
+	font-weight: 600
+	margin-bottom: 4px
+
+p, h1
+	margin: 0
+
+.profile__info__main__private
+	color: #000B26B8
+	font-weight: 400
+	font-size: 16px
+	line-height: 20px
+	margin-top: 12px
+
+
+
+

@@ -1,21 +1,23 @@
-<ul *ngFor='let promoCode of promoCodes'>
-	<li>
-		<div class='promo-codes__content'>
-			<div class='promo-codes__picture'>
-				<p class='promo-codes__picture__price'>{{promoCode.price}}<span>₽</span></p>
-				<img src='../../../assets/promoCode{{promoCode.is_activated? "Inactive" : "Active"}}.png' alt='промокод' />
-			</div>
-			<div>
-				<div class='promo-codes__meta'>
-					<h5 class='promo-codes__meta__top'>Дата создания:</h5>
-					<p class='promo-codes__meta__bottom'>{{promoCode.getting_date_time | date: 'shortDate'}}</p>
+<ul>
+	<ng-container  *ngFor='let promoCode of promoCodes'>
+		<li>
+			<div class='promo-codes__content'>
+				<div class='promo-codes__picture'>
+					<p class='promo-codes__picture__price'>{{promoCode.price}}<span>₽</span></p>
+					<img src='../../../assets/promoCode{{promoCode.is_activated? "Inactive" : "Active"}}.png' alt='промокод' />
 				</div>
 				<div>
-					<h5 class='promo-codes__meta__top'>Ссылка на товар:</h5>
-					<a class='promo-codes__meta__bottom link'>{{promoCode.item_url}}</a>
+					<div class='promo-codes__meta'>
+						<h5 class='promo-codes__meta__top'>Дата создания:</h5>
+						<p class='promo-codes__meta__bottom'>{{promoCode.getting_date_time | date: 'shortDate'}}</p>
+					</div>
+					<div>
+						<h5 class='promo-codes__meta__top'>Ссылка на товар:</h5>
+						<a class='promo-codes__meta__bottom link'>{{promoCode.item_url}}</a>
+					</div>
 				</div>
 			</div>
-		</div>
-		<button *ngIf='!promoCode.is_activated' appButton theme='GRAY' [mini]='true'>Показать qr-код</button>
-	</li>
+			<button *ngIf='!promoCode.is_activated' appButton theme='GRAY' [mini]='true'>Показать qr-код</button>
+		</li>
+	</ng-container>
 </ul>
