@@ -1,0 +1,54 @@
+@import 'constants'
+
+.history
+	&__meta
+		line-height: 18px
+		font-size: 14px
+
+		&:not(:last-child)
+			margin-bottom: 16px
+
+
+		&__top
+			font-weight: 500
+			color: #000B2666
+			margin-bottom: 4px
+
+		&__bottom
+			font-weight: 400
+			color: #000B26E0
+			max-width: 343px
+
+	&__entry
+		border: 1px solid $c-border
+		border-radius: 20px
+		display: flex
+		justify-content: space-between
+		padding: 32px
+
+		&:not(:last-child)
+			margin-bottom: 16px
+
+
+p, h5
+	margin: 0
+
+.materials
+	display: flex
+	gap: 15px
+
+.income
+	display: flex
+	gap: 8px
+	align-items: center
+	align-self: start
+
+	p
+		font-weight: 600
+		font-size: 14px
+		line-height: 20px
+
+.divider
+	height: 1px
+	background-color: $c-border
+	margin-bottom: 24px

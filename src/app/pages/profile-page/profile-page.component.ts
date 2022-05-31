@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+ import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { AuthService } from '@services/auth.service';
 
 export interface IUser {
@@ -32,7 +32,7 @@ export class ProfilePageComponent implements OnInit{
 		private authService: AuthService,
 		)
 	{
-		this.displayComponent = 'promo-codes';
+		this.displayComponent = 'history';
 	}
 
 	ngOnInit(): void {

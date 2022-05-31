@@ -1,4 +1,6 @@
-export const promoCodesMock = [
+import { IPromoCode } from '@components/profile/promoCodes/promo-codes.interfaces';
+
+export const promoCodesMock: IPromoCode[] = [
 	{
 		getting_date_time: '2022-05-30T18:41:43.124Z',
 		activation_date_time: '2022-05-30T18:41:43.124Z',
