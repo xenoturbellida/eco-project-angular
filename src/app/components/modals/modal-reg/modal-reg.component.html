@@ -13,14 +13,14 @@
 		<div>
 			<input
 				type='tel'
-				formControlName='phone'
+				formControlName='phone_number'
 				placeholder='Телефон'
-				[class.input--error]='control("phone")?.touched && control("phone")?.dirty && control("phone")?.errors'
+				[class.input--error]='control("phone_number")?.touched && control("phone_number")?.dirty && control("phone_number")?.errors'
 			/>
 			<ng-container
-				*ngIf='control("phone")?.touched && control("phone")?.dirty && control("phone")?.errors'
+				*ngIf='control("phone_number")?.touched && control("phone_number")?.dirty && control("phone_number")?.errors'
 			>
-				<div class='error'>{{ getError(control("phone")?.errors) }}</div>
+				<div class='error'>{{ getError(control("phone_number")?.errors) }}</div>
 			</ng-container>
 		</div>
 

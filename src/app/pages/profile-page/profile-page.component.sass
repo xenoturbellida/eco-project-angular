@@ -1,0 +1,43 @@
+@import 'constants'
+
+.main
+	width: 100%
+	height: 100vh
+	margin: 0
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+
+.container
+	display: flex
+	flex-direction: row
+	height: 100%
+	max-width: 1200px
+	margin: 0 auto
+	width: 100%
+	gap: 47px
+
+.profile
+	&__info
+		border: 1px solid $c-border
+		border-radius: 20px
+		height: min-content
+		flex: 0 0 32%
+
+	&__assets
+		max-width: 768px
+
+		nav ul
+			display: flex
+			gap: 24px
+
+		&__tab
+			font-size: 20px
+			line-height: 26px
+			font-weight: 500
+			color: $c-inactive-tab-font
+
+			&--active
+				border: none
+				border-bottom: 3px solid $c-primary
+				color: $c-tab-font

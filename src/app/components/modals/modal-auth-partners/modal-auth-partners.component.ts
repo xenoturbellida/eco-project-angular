@@ -30,7 +30,7 @@ export class ModalAuthPartnersComponent {
 			password: ['', [
 				Validators.required,
 				Validators.maxLength(50),
-				Validators.minLength(8),
+				Validators.minLength(6),
 			]],
 		})
 	}

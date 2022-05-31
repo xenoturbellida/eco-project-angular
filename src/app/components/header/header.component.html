@@ -1,8 +1,9 @@
-<div class="container">
-	<div class="header_wrapper">
+<div class="header_wrapper">
+	<div class='header_part'>
 		<a routerLink="/" class="logo">
 			<img src="/assets/logo.svg" alt="">
 		</a>
+		<nav class='header_nav'>
 			<a routerLink="/" class="header_link">
 				Главная
 			</a>
@@ -15,20 +16,24 @@
 			<a routerLink="/" class="header_link">
 				О сервисе
 			</a>
-		<div class="header_wrapper">
-			<div class="header_right">
-				<button appButton theme='CONTENT_ONLY' iconPosition='left'>
-					<img src="/assets/place.svg" alt="" class='header_icon'>
-					Город
-				</button>
-			</div>
-			<div class="header_right">
+		</nav>
+	</div>
+	<div class='header_part'>
+		<button appButton theme='CONTENT_ONLY' iconPosition='left'>
+			<img src="/assets/place.svg" alt="" class='header_icon'>
+			Город
+		</button>
+		<div class='header_auth'>
+			<a *ngIf='authService.isAuthorized; else login_button' routerLink="/profile">
+				Profile
+			</a>
+			<ng-template #login_button>
 				<button appButton theme='CONTENT_ONLY' iconPosition='left' (click)='openAuthDialog()'>
 					<img src="/assets/enter.svg" alt="" class='header_icon'>
 					Войти
 				</button>
-
-			</div>
+			</ng-template>
 		</div>
+
 	</div>
 </div>

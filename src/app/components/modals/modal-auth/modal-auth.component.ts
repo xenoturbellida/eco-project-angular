@@ -8,7 +8,6 @@ import { ModalAuthPartnersComponent } from '@components/modals/modal-auth-partne
 import { ToastService } from '@services/toast.service';
 import { AuthService } from '@services/auth.service';
 import { ErrorsHandlerService } from '@services/errors-handler.service';
-import { ValidatePhone } from '@utils/validation.utils';
 
 @Component({
   selector: 'app-modal-auth',
@@ -31,12 +30,12 @@ export class ModalAuthComponent {
 		this.form = this.fb.group({
 			login: ['', [
 				Validators.required,
-				ValidatePhone,
+				// ValidatePhone,
 			]],
 			password: ['', [
 				Validators.required,
 				Validators.maxLength(50),
-				Validators.minLength(8),
+				Validators.minLength(6),
 			]],
 		})
 		this.form.markAllAsTouched();
@@ -51,6 +50,7 @@ export class ModalAuthComponent {
 			this.toast.error('Заполните все поля!');
 			return;
 		}
+		console.log(this.form.value);
 		this.authService.authorize(this.form.value).subscribe(res => {
 			this.toast.success('Добро пожаловать');
 			this.authService.token = res.token;

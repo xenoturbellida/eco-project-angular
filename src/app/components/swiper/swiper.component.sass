@@ -1,11 +1,15 @@
 @import '~swiper/swiper.min.css'
 @import '~swiper/modules/navigation/navigation.min.css'
+@import 'constants'
+
 .swiper_wrapper
 	margin: 0 auto
+	max-width: $container-max-width
 	width: 90%
 	display: flex
 	justify-content: center
 	align-items: center
+
 	.navigation
 		display: flex
 		justify-content: space-between
@@ -13,6 +17,7 @@
 		z-index: 5
 		cursor: pointer
 		position: absolute
+		max-width: $container-max-width
 		width: 90%
 	.swiper-button-prev-custom,
 	.swiper-button-next-custom

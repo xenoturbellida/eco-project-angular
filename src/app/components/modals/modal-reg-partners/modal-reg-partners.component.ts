@@ -33,7 +33,7 @@ export class ModalRegPartnersComponent {
 			password: ['', [
 				Validators.required,
 				Validators.maxLength(50),
-				Validators.minLength(8),
+				Validators.minLength(6),
 			]],
 		})
 	}
@@ -44,14 +44,8 @@ export class ModalRegPartnersComponent {
 	}
 
 	onSubmit(): void {
-		const org = this.form.get('org')?.value;
-		const password = this.form.get('password')?.value;
-		const email = this.form.get('email')?.value;
-		console.log('modal org', org);
-		console.log('modal password', password);
-		console.log('modal email', email);
 		// Call API here
-		this.dialogRef.close({ org: org, email: email, password: password })
+		this.dialogRef.close(this.form.value);
 	}
 
 	closeModal(): void {

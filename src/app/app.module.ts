@@ -30,6 +30,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { UrlInterceptorService } from '@services/url-interceptor.service';
 import { AuthInterceptorService } from '@services/auth-interceptor.service';
 import { ErrorInterceptorService } from '@services/error-interceptor.service';
+import { PromoCodesComponent } from '@components/profile/promoCodes/promo-codes.component';
+import { HistoryComponent } from '@components/profile/history/history.component';
 
 @NgModule({
 	declarations: [
@@ -52,6 +54,8 @@ import { ErrorInterceptorService } from '@services/error-interceptor.service';
         ModalEnterCodeComponent,
         ModalRegPartnersComponent,
         ButtonDirective,
+        PromoCodesComponent,
+        HistoryComponent,
 	],
 	imports: [
 		BrowserModule,
