@@ -36,6 +36,9 @@ import { CheckboxGroupComponent } from './components/ui/checkbox-group/checkbox-
 import { BalanceCardComponent } from './components/cards/balance-card/balance-card.component';
 import { ModalQrCodeComponent } from './components/modals/modal-qr-code/modal-qr-code.component';
 import { FiltersGroupComponent } from './components/ui/filters-group/filters-group.component';
+import { MapSmallCardComponent } from './components/cards/map-small-card/map-small-card.component';
+import { DropDownListComponent } from './components/ui/drop-down-list/drop-down-list.component';
+import { SearchInputComponent } from './components/ui/search-input/search-input.component';
 
 @NgModule({
 	declarations: [
@@ -64,6 +67,9 @@ import { FiltersGroupComponent } from './components/ui/filters-group/filters-gro
         BalanceCardComponent,
         ModalQrCodeComponent,
         FiltersGroupComponent,
+        MapSmallCardComponent,
+        DropDownListComponent,
+        SearchInputComponent
 	],
 	imports: [
 		BrowserModule,

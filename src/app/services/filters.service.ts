@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-interface FilterItem {
+export interface FilterItem {
 	name: string;
 	checked: boolean;
 }
@@ -31,6 +31,12 @@ const brandsMock: Array<FilterItem> = [
 	{ name: 'Rebook', checked: false }
 ]
 
+const materialsMock: Array<FilterItem> = [
+	{ name: 'Бумага', checked: false },
+	{ name: 'Пластик', checked: false },
+	{ name: 'Дерево', checked: false },
+];
+
 @Injectable({
 	providedIn: 'root'
 })
@@ -40,6 +46,7 @@ export class FiltersService {
 	categories$: Array<FilterItem> = categoriesMock;
 	brands$: Array<FilterItem> = brandsMock;
 	filters$: Array<FilterItem> = filtersMock;
+	materials$: Array<FilterItem> = materialsMock;
 
 	constructor() {
 	}
