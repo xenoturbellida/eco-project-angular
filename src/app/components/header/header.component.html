@@ -24,9 +24,23 @@
 			Город
 		</button>
 		<div class='header_auth'>
-			<a *ngIf='authService.isAuthorized; else login_button' routerLink="/profile">
-				Profile
-			</a>
+			<ng-container *ngIf='authService.isAuthorized; else login_button'>
+				<div class='authorized'>
+					<div class='header_auth__block'>
+						<img src='../../assets/currency.svg' alt='валюта' />
+						<p class='balance'>{{user?.balance}}</p>
+					</div>
+					<a routerLink="/profile">
+						<div class='header_auth__block'>
+							<div class='header_auth__photo_container'>
+								<img src='../../assets/userPhotoMock.png' alt='пользователь' />
+							</div>
+							<p class='firstname'>{{user?.firstname}}</p>
+						</div>
+					</a>
+				</div>
+			</ng-container>
+
 			<ng-template #login_button>
 				<button appButton theme='CONTENT_ONLY' iconPosition='left' (click)='openAuthDialog()'>
 					<img src="/assets/enter.svg" alt="" class='header_icon'>
