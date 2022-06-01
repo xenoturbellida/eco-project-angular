@@ -42,22 +42,17 @@ export class ModalAuthComponent {
 	}
 
 	onSubmit(): void {
-	  const password = this.form.get('password')?.value;
-	  const login = this.form.get('login')?.value;
-	  console.log('modal password', password);
-	  console.log('modal login', login);
 		if (!this.form.valid) {
 			this.toast.error('Заполните все поля!');
 			return;
 		}
-		console.log(this.form.value);
 		this.authService.authorize(this.form.value).subscribe(res => {
 			this.toast.success('Добро пожаловать');
 			this.authService.token = res.token;
 		}, err => {
 			console.log(err);
 		})
-	  this.dialogRef.close({ login: login, password: password })
+	  this.dialogRef.close(this.form.value)
 	}
 
 	closeModal(): void {

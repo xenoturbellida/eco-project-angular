@@ -42,7 +42,6 @@ export class ProfilePageComponent implements OnInit{
 	getProfile(): void {
 		this.authService.getProfile().subscribe(res => {
 			this.user = res;
-			console.log(this.user);
 			this.cdr.markForCheck();
 		}, err => {
 			console.log(err);

@@ -41,10 +41,8 @@ export class ModalRegComponent {
 			this.toast.error('Заполните все поля!');
 			return;
 		}
-		console.log(this.form.value);
 		this.authService.registration(this.form.value).subscribe(res => {
 			this.toast.success('Добро пожаловать');
-			console.log(res);
 		}, err => {
 			console.log(err);
 		})

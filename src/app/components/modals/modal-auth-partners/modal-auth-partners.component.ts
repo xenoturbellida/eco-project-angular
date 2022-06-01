@@ -36,12 +36,7 @@ export class ModalAuthPartnersComponent {
 	}
 
 	onSubmit(): void {
-		const password = this.form.get('password')?.value;
-		const email = this.form.get('email')?.value;
-		console.log('modal password', password);
-		console.log('modal email', email);
-		// Call API here
-		this.dialogRef.close({ email: email, password: password })
+		this.dialogRef.close(this.form.value)
 	}
 
 	closeModal(): void {

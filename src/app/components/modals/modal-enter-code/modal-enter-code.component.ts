@@ -27,10 +27,7 @@ export class ModalEnterCodeComponent {
 	}
 
 	onSubmit(): void {
-	  const code = this.form.get('code')?.value;
-	  console.log('modal code', code);
-	  // Call API here
-	  this.dialogRef.close({ code: code });
+	  this.dialogRef.close(this.form.value);
 	}
 
 	closeModal(): void {
