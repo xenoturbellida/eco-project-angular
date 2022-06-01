@@ -3,6 +3,7 @@ import { ModalAuthComponent } from '@components/modals/modal-auth/modal-auth.com
 import { DialogService } from '@services/dialog.service';
 import { AuthService } from '@services/auth.service';
 import { IUser } from '@pages/profile-page/profile-page.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -18,6 +19,7 @@ export class HeaderComponent implements OnInit {
 		  private dialog: DialogService,
 		  public authService: AuthService,
 		  public cdr: ChangeDetectorRef,
+		  public router: Router,
 	) { }
 
 	ngOnInit(): void {

@@ -4,16 +4,16 @@
 			<img src="/assets/logo.svg" alt="">
 		</a>
 		<nav class='header_nav'>
-			<a routerLink="/" class="header_link">
+			<a routerLink="/" [ngClass]='{"header_link": true, "header_link--active": router.url === "/"}'>
 				Главная
 			</a>
-			<a routerLink="/collect_point" class="header_link">
+			<a routerLink="/collect_point" [ngClass]='{"header_link": true, "header_link--active": router.url === "/collect_point"}'>
 				Пункты сбора
 			</a>
-			<a routerLink="/eco_market" class="header_link">
+			<a routerLink="/eco_market" [ngClass]='{"header_link": true, "header_link--active": router.url === "/eco_market"}'>
 				Экомаркет
 			</a>
-			<a routerLink="/" class="header_link">
+			<a routerLink="/stub" [ngClass]='{"header_link": true, "header_link--active": router.url === "/stub"}'>
 				О сервисе
 			</a>
 		</nav>
