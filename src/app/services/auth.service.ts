@@ -9,10 +9,8 @@ interface AuthParams {
 }
 
 interface User {
-	email: string;
 	phone_number: string;
 	password: string;
-	role: string;
 }
 
 @Injectable({
@@ -46,13 +44,8 @@ export class AuthService {
 	saveToStorage(res: any): void {
 		this.token = res.access_token;
 	}
+
+	getPromoCodes(): Observable<any> {
+		return this.http.get('promo-codes/eco-rus/api/v1/promo-codes');
+	}
 }
-
-
-
-
-
-
-
-
-

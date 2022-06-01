@@ -1,0 +1,91 @@
+@import 'constants'
+
+.main
+	width: 100%
+	height: 100vh
+	margin: 0
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+
+.container, .page_heading
+	max-width: 1200px
+	width: 100%
+
+.container
+	margin: 0 auto
+	display: flex
+	flex-direction: row
+	height: 100%
+	gap: 47px
+
+.page_heading
+	margin: 40px auto
+
+.profile
+	&__info
+		border: 1px solid $c-border
+		border-radius: 20px
+		height: min-content
+		flex: 0 0 32%
+		display: flex
+		flex-direction: column
+		align-items: center
+		gap: 24px
+		padding: 32px
+		box-sizing: border-box
+
+		&__main
+			display: flex
+			flex-direction: column
+			align-items: center
+
+
+	&__assets
+		max-width: 768px
+		width: 100%
+
+		nav ul
+			display: flex
+			gap: 24px
+
+		&__tab
+			font-size: 20px
+			line-height: 26px
+			font-weight: 500
+			color: $c-inactive-tab-font
+
+			&--active
+				border: none
+				border-bottom: 3px solid $c-primary
+				color: $c-tab-font
+
+
+
+.photo_container
+	max-width: 128px
+	max-height: 128px
+
+	img
+		width: 100%
+
+.name
+	font-size: 24px
+	line-height: 28px
+	color: #000B26E0
+	font-weight: 600
+	margin-bottom: 4px
+
+p, h1
+	margin: 0
+
+.profile__info__main__private
+	color: #000B26B8
+	font-weight: 400
+	font-size: 16px
+	line-height: 20px
+	margin-top: 12px
+
+
+
+

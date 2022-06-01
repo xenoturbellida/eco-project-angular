@@ -30,6 +30,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { UrlInterceptorService } from '@services/url-interceptor.service';
 import { AuthInterceptorService } from '@services/auth-interceptor.service';
 import { ErrorInterceptorService } from '@services/error-interceptor.service';
+import { PromoCodesComponent } from '@components/profile/promoCodes/promo-codes.component';
+import { HistoryComponent } from '@components/profile/history/history.component';
 import { EcoMarketCardComponent } from './components/cards/eco-market-card/eco-market-card.component';
 import { CheckboxComponent } from './components/ui/checkbox/checkbox.component';
 import { CheckboxGroupComponent } from './components/ui/checkbox-group/checkbox-group.component';
@@ -61,6 +63,8 @@ import { SearchInputComponent } from './components/ui/search-input/search-input.
         ModalEnterCodeComponent,
         ModalRegPartnersComponent,
         ButtonDirective,
+        PromoCodesComponent,
+        HistoryComponent,
         EcoMarketCardComponent,
         CheckboxComponent,
         CheckboxGroupComponent,

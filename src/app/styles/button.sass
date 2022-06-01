@@ -24,6 +24,8 @@
 		width: 170px
 		height: 48px
 		background: rgba(62, 80, 114, 0.08)
+		color: $c-btn-dark-font
+
 		&:hover
 			background-color: rgba(54, 73, 101, 0.12)
 
@@ -54,7 +56,20 @@
 		display: flex
 		align-items: center
 
+	&--tab
+		width: fit-content
+		background-color: transparent
+		color: inherit
+		font-weight: inherit
+		font-size: inherit
+		padding-bottom: 4px
+
 	&:disabled
 		background-color: $c-disabled-bg
 		color: $c-disabled-font
 		cursor: auto
+
+	&__mini
+		font-size: 14px
+		line-height: 20px
+		padding: 10px 20px

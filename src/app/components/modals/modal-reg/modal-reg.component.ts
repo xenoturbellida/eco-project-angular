@@ -28,7 +28,7 @@ export class ModalRegComponent {
 		private erHandler: ErrorsHandlerService,
 	) {
 		this.form = this.fb.group({
-			phone: ['', [
+			phone_number: ['', [
 				Validators.required,
 				ValidatePhone,
 			]],
@@ -37,20 +37,18 @@ export class ModalRegComponent {
 	}
 
 	onSubmit(): void {
-		const password = this.form.get('password')?.value;
-		const phone = this.form.get('phone')?.value;
-		console.log('modal password', password);
-		console.log('modal phone', phone);
 		if (!this.form.valid) {
 			this.toast.error('Заполните все поля!');
 			return;
 		}
+		console.log(this.form.value);
 		this.authService.registration(this.form.value).subscribe(res => {
 			this.toast.success('Добро пожаловать');
+			console.log(res);
 		}, err => {
 			console.log(err);
 		})
-		this.dialogRef.close({ phone: phone, password: password });
+		this.dialogRef.close(this.form.value);
 		this.dialog.openDialog(ModalEnterCodeComponent);
 	}
 

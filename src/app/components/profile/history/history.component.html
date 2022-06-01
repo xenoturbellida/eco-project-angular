@@ -1,0 +1,29 @@
+<div class='divider'></div>
+<ul>
+	<ng-container *ngFor='let historyEntry of history'>
+		<li class='history__entry'>
+			<ul>
+				<li class='history__meta'>
+					<h5 class='history__meta__top'>Адрес</h5>
+					<p class='history__meta__bottom'>{{historyEntry.address}}</p>
+				</li>
+				<li class='history__meta'>
+					<h5 class='history__meta__top'>Материал</h5>
+					<ul  class='materials'>
+						<ng-container *ngFor='let cont of historyEntry.content'>
+							<li class='history__meta__bottom'>{{cont.material}}: {{cont.weight}} {{cont.units}}</li>
+						</ng-container>
+					</ul>
+				</li>
+				<li class='history__meta'>
+					<h5 class='history__meta__top'>Дата</h5>
+					<p class='history__meta__bottom'>{{historyEntry.date | date}}</p>
+				</li>
+			</ul>
+			<div class='income'>
+				<img src='../../../../assets/currency.svg' alt='валюта' />
+				<p>{{historyEntry.income}}</p>
+			</div>
+		</li>
+	</ng-container>
+</ul>

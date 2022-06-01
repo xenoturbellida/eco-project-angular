@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainPageComponent } from '@pages/main-page/main-page.component';
 import { CollectPointPageComponent } from '@pages/collect-point-page/collect-point-page.component';
 import { EcoMarketPageComponent } from '@pages/eco-market-page/eco-market-page.component';
+import { ProfilePageComponent } from '@pages/profile-page/profile-page.component';
 
 const routes: Routes = [
 	{
@@ -16,6 +17,10 @@ const routes: Routes = [
 	{
 		path: 'eco_market',
 		component: EcoMarketPageComponent,
+	},
+	{
+		path: 'profile',
+		component: ProfilePageComponent,
 	},
 ];
 

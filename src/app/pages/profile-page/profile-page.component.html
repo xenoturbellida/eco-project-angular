@@ -1,1 +1,37 @@
-<p>profile-page works!</p>
+<div class="main">
+	<app-header></app-header>
+	<h1 class='page_heading'>Личный кабинет</h1>
+	<div class="container">
+
+		<div class='profile__info'>
+			<div class='photo_container'>
+				<img src='../../../assets/userPhotoMock.png' alt='фотография пользователя'/>
+			</div>
+			<div class='profile__info__main'>
+				<p class='name'>{{user?.firstname}} {{user?.lastname}}</p>
+				<p class='profile__info__main__private'>{{user?.phone_number}}</p>
+				<p class='profile__info__main__private'>{{user?.email}}</p>
+			</div>
+			<button appButton theme='GRAY'>Редактировать</button>
+		</div>
+		<div class='profile__assets'>
+			<nav>
+				<ul>
+					<li class='profile__assets__tab' [class.profile__assets__tab--active]='displayComponent === "promo-codes"'>
+						<button appButton theme='TAB' (click)='displayComponent = "promo-codes"'>Промокоды</button>
+					</li>
+					<li class='profile__assets__tab' [class.profile__assets__tab--active]='displayComponent === "history"'>
+						<button appButton theme='TAB' (click)='displayComponent = "history"'>История</button>
+					</li>
+				</ul>
+			</nav>
+			<ng-container *ngIf='displayComponent === "promo-codes"'>
+				<app-promo-codes></app-promo-codes>
+			</ng-container>
+			<ng-container *ngIf='displayComponent === "history"'>
+				<app-history></app-history>
+			</ng-container>
+		</div>
+
+	</div>
+</div>

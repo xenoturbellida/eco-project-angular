@@ -1,34 +1,53 @@
-<div class="container">
-	<div class="header_wrapper">
+<div class="header_wrapper">
+	<div class='header_part'>
 		<a routerLink="/" class="logo">
 			<img src="/assets/logo.svg" alt="">
 		</a>
-			<a routerLink="/" class="header_link">
+		<nav class='header_nav'>
+			<a routerLink="/" [ngClass]='{"header_link": true, "header_link--active": router.url === "/"}'>
 				Главная
 			</a>
-			<a routerLink="/collect_point" class="header_link">
+			<a routerLink="/collect_point" [ngClass]='{"header_link": true, "header_link--active": router.url === "/collect_point"}'>
 				Пункты сбора
 			</a>
-			<a routerLink="/eco_market" class="header_link">
+			<a routerLink="/eco_market" [ngClass]='{"header_link": true, "header_link--active": router.url === "/eco_market"}'>
 				Экомаркет
 			</a>
-			<a routerLink="/" class="header_link">
+			<a routerLink="/stub" [ngClass]='{"header_link": true, "header_link--active": router.url === "/stub"}'>
 				О сервисе
 			</a>
-		<div class="header_wrapper">
-			<div class="header_right">
-				<button appButton theme='CONTENT_ONLY' iconPosition='left'>
-					<img src="/assets/place.svg" alt="" class='header_icon'>
-					Город
-				</button>
-			</div>
-			<div class="header_right">
+		</nav>
+	</div>
+	<div class='header_part'>
+		<button appButton theme='CONTENT_ONLY' iconPosition='left'>
+			<img src="/assets/place.svg" alt="" class='header_icon'>
+			Город
+		</button>
+		<div class='header_auth'>
+			<ng-container *ngIf='authService.isAuthorized; else login_button'>
+				<div class='authorized'>
+					<div class='header_auth__block'>
+						<img src='../../assets/currency.svg' alt='валюта' />
+						<p class='balance'>{{user?.balance}}</p>
+					</div>
+					<a routerLink="/profile">
+						<div class='header_auth__block'>
+							<div class='header_auth__photo_container'>
+								<img src='../../assets/userPhotoMock.png' alt='пользователь' />
+							</div>
+							<p class='firstname'>{{user?.firstname}}</p>
+						</div>
+					</a>
+				</div>
+			</ng-container>
+
+			<ng-template #login_button>
 				<button appButton theme='CONTENT_ONLY' iconPosition='left' (click)='openAuthDialog()'>
 					<img src="/assets/enter.svg" alt="" class='header_icon'>
 					Войти
 				</button>
-
-			</div>
+			</ng-template>
 		</div>
+
 	</div>
 </div>
