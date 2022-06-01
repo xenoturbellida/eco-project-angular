@@ -1,0 +1,15 @@
+<div class='promo_code_card'>
+	<div class='promo_code_card_content'>
+		<div class='balance_title'>
+			На вашем балансе
+			<img src='../../assets/currency.svg' alt='валюта'/>
+			<span>{{balance}}</span>
+		</div>
+		<div class='balance_subtitle'>
+			Вы можете обменять их на скидку {{balance}} руб.
+		</div>
+	</div>
+	<div>
+		<button appButton theme='GREEN' class='btn' (click)='openQRCodeDialog()'>Получить промокод</button>
+	</div>
+</div>

@@ -1,0 +1,6 @@
+<select class="drop-down-list">
+	<option disabled selected>{{name}}</option>
+	<option *ngFor='let item of items'>
+		<app-checkbox [name]='item.name'></app-checkbox>
+	</option>
+</select>

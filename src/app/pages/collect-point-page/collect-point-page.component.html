@@ -1,2 +1,23 @@
 <app-header></app-header>
+<div class='layout_wrapper'>
+<div class='layout_container'>
+	<div class='map_menu'>
+		<app-search-input class='map_menu_input'></app-search-input>
+		<app-drop-down-list
+			name="Выбрано 3 магазина"
+			[items]=brands$>
+		</app-drop-down-list>
+		<app-drop-down-list
+			name='Материалы'
+			[items]=materials$>
+		</app-drop-down-list>
+	</div>
+	<div class='collect_point_info_cards'>
+		<div *ngFor='let item of mapItems$ | async'>
+			<app-map-small-card [mapItem]='item'></app-map-small-card>
+		</div>
+	</div>
+</div>
+</div>
 <app-map></app-map>
+

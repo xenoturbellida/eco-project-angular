@@ -32,6 +32,15 @@ import { AuthInterceptorService } from '@services/auth-interceptor.service';
 import { ErrorInterceptorService } from '@services/error-interceptor.service';
 import { PromoCodesComponent } from '@components/profile/promoCodes/promo-codes.component';
 import { HistoryComponent } from '@components/profile/history/history.component';
+import { EcoMarketCardComponent } from './components/cards/eco-market-card/eco-market-card.component';
+import { CheckboxComponent } from './components/ui/checkbox/checkbox.component';
+import { CheckboxGroupComponent } from './components/ui/checkbox-group/checkbox-group.component';
+import { BalanceCardComponent } from './components/cards/balance-card/balance-card.component';
+import { ModalQrCodeComponent } from './components/modals/modal-qr-code/modal-qr-code.component';
+import { FiltersGroupComponent } from './components/ui/filters-group/filters-group.component';
+import { MapSmallCardComponent } from './components/cards/map-small-card/map-small-card.component';
+import { DropDownListComponent } from './components/ui/drop-down-list/drop-down-list.component';
+import { SearchInputComponent } from './components/ui/search-input/search-input.component';
 
 @NgModule({
 	declarations: [
@@ -56,6 +65,15 @@ import { HistoryComponent } from '@components/profile/history/history.component'
         ButtonDirective,
         PromoCodesComponent,
         HistoryComponent,
+        EcoMarketCardComponent,
+        CheckboxComponent,
+        CheckboxGroupComponent,
+        BalanceCardComponent,
+        ModalQrCodeComponent,
+        FiltersGroupComponent,
+        MapSmallCardComponent,
+        DropDownListComponent,
+        SearchInputComponent
 	],
 	imports: [
 		BrowserModule,

@@ -1,2 +1,36 @@
 <app-header></app-header>
-<p>eco-market-page works!</p>
+<main class='content_aligner'>
+	<div class='main_container'>
+		<div class='header_container'>
+			<h1>Эко маркет</h1>
+			<app-filters-group></app-filters-group>
+		</div>
+		<div class='content_container'>
+			<div class='filters'>
+				<app-checkbox-group></app-checkbox-group>
+			</div>
+			<div class='market_container'>
+			<div *ngFor="let item of cardItems">
+				<button (mouseenter)='cardHovered(item)' (mouseleave)='cardUnhovered(item)'
+				        [@cardFlip]='item.state'
+				        class='card'>
+					<div class='card__face front'>
+					<app-eco-market-card
+					[photo]="item.data.photo"
+					[title]="item.data.title"
+					[brand]="item.data.brand"
+					[category]="item.data.category"
+					[price]="item.data.price"
+				></app-eco-market-card>
+					</div>
+					<div class='face back'>
+						<app-balance-card balance='200'></app-balance-card>
+					</div>
+				</button>
+
+			</div>
+			</div>
+		</div>
+	</div>
+</main>
+<app-footer></app-footer>

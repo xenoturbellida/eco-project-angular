@@ -47,3 +47,22 @@ $c-light-shadow: #E5EAF2
 			flex-direction: column
 			justify-content: space-between
 			gap: 24px
+
+@media screen  and (max-width: 800px)
+	\:host
+		display: flex
+		flex-direction: column
+		padding: 40px
+		outline: none
+		height: 100vh
+		max-height: 100%
+		overflow: auto
+		box-shadow: none
+		border-radius: 0
+		max-width: 100%
+		width: 100vw
+
+		::ng-deep
+			.modal_content
+				height: 100vh
+				justify-content: space-evenly
